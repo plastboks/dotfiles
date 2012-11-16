@@ -1,1 +1,2 @@
+# switch between us and norwegian keybaord layout, and enlight the scroll lock.
 -option grp:alt_shift_toggle,grp_led:scroll us,no
