@@ -1,3 +1,7 @@
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+
 " Wrap too long lines
 set wrap
 
@@ -98,3 +102,6 @@ hi Underlined   ctermfg=7
 hi Ignore       ctermfg=9
 hi Error        ctermfg=11
 hi Todo         ctermfg=1
+
+
+
