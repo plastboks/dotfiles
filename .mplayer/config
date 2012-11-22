@@ -1,3 +1,5 @@
 # Write your default config options here!
 
-stop-xscreensaver=true
+stop-xscreensaver=true # stop screensaver
+ontop=true # stay on top
+framedrop=true #for slow machines
