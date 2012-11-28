@@ -3,3 +3,5 @@
 stop-xscreensaver=true # stop screensaver
 ontop=true # stay on top
 framedrop=true #for slow machines
+cache=8192
+
