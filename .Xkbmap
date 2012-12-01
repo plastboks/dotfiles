@@ -1,2 +1,2 @@
--option grp:meta_shift_toggle,grp_led:scroll us,no
+-option grp:shift_toggle,grp_led:scroll us,no
 -option ctrl:nocaps
