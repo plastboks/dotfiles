@@ -1,0 +1,9 @@
+## i3 startupscripts 
+## ====================
+
+# keyboard repeat and delay
+sleep 5s && /usr/bin/xset r rate 280 160 &
+
+# Autostart the Dropbox deamon
+sleep 5s && ~/.dropbox-dist/dropboxd &
+
