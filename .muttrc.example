@@ -4,7 +4,7 @@
 set imap_user = "email"
 set imap_pass = "password"
 set smtp_url = "smtp://email@smtp.gmail.com:587/"
-set smtp_pass = "email"
+set smtp_pass = "password"
 set from = "email"
 set realname = "realname"
 
