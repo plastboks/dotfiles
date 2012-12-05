@@ -1,4 +1,4 @@
 # Disable the annoying bell
 set bell-style none
-xset b off
-xset b 0 0 0
+/usr/bin/xset b off
+#xset b 0 0 0
