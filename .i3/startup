@@ -1,6 +1,17 @@
 ## i3 startupscripts 
 ## ====================
 
+
+# disable the annonying bell
+set bell-style none &
+xset b off &
+
+# set cursor speed
+xset r rate 280 160 &
+
+# screensaver
+sleep 5s && /usr/bin/xautolock -time 5 -locker 'i3lock --color=000000' & 
+
 # keyboard repeat and delay
 sleep 5s && /usr/bin/xset r rate 280 160 &
 
