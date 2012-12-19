@@ -3,6 +3,12 @@
 SCRIPT=`readlink -f $0`
 DOTPATH=`dirname $SCRIPT`
 
+# bash files
+rm $HOME/.bashrc
+rm $HOME/.bash_profile
+ln -s $DOTPATH/.bashrc $HOME
+ln -s $DOTPATH/.bash_profile $HOME
+
 # i3status
 rm $HOME/.i3status.conf
 ln -s $DOTPATH/.i3status.conf $HOME
