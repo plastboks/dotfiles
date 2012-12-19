@@ -47,4 +47,8 @@ ln -s $DOTPATH/.tmux.conf $HOME
 
 # Newsbeuter
 rm -r $HOME/.newsbeuter
-ln -s $HOME/.newsbeuter $HOME
+ln -s $DOTPATH/.newsbeuter $HOME
+
+# Luakit
+rm -r $HOME/.config/luakit
+ln -s $DOTPATH/.config/luakit $HOME/.config/luakit
