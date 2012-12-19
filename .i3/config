@@ -156,12 +156,11 @@ bar {
 
 # Custom part of my config file
 
-# execute some programs and settings
-#exec --no-startup-id ~/.i3/startup
-
 # start windows without borders by default
 new_window 1pixel
-new_float none
 
 # background colod
 client.background #1F1F1F
+
+# float force some applications
+for_window [class="keepassx"] floating enable

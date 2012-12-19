@@ -39,4 +39,6 @@ ln -s $DOTPATH/.Xdefaults $HOME
 rm -r $HOME/.tmux.conf
 ln -s $DOTPATH/.tmux.conf $HOME
 
-
+# Newsbeuter
+rm -r $HOME/.newsbeuter
+ln -s $HOME/.newsbeuter $HOME
