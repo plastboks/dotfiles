@@ -418,6 +418,17 @@ add_binds("normal", {
     key({"Control"}, "z",
         "Enter `passthrough` mode, ignores all luakit keybindings.",
         function (w) w:set_mode("passthrough") end),
+    
+    
+    key({}, "v", function (w) 
+        local view = w.view
+        local uri = view.hovered_uri or view.uri
+        if uri then
+            luakit.spawn(string.format("urxvt -e cclive -f best --filename-format '%%t.%%s' "
+                .. "--output-dir %q --exec='mplayer \"%%f\"' %q",
+                os.getenv("HOME").."/downloads/tmp", uri))
+        end 
+    end),
 })
 
 add_binds("insert", {

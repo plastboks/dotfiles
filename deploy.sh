@@ -52,3 +52,12 @@ ln -s $DOTPATH/.newsbeuter $HOME
 # Luakit
 rm -r $HOME/.config/luakit
 ln -s $DOTPATH/.config/luakit $HOME/.config/luakit
+mkdir -p $HOME/downloads/tmp
+
+# GTK setup
+rm -r $HOME/.gtkrc-2.0
+ln -s $DOTPATH/.gtkrc-2.0 $HOME
+
+# Screenlayout
+rm -r $HOME/.screenlayout
+ln -s $DOTPATH/.screenlayout $HOME
