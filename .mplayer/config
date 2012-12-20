@@ -1,7 +1,9 @@
 # Write your default config options here!
 
 stop-xscreensaver=true # stop screensaver
-ontop=true # stay on top
+#ontop=true #stay on top
+utf8=true 
 framedrop=true #for slow machines
 cache=8192
-
+#geometry=50%:50% #startup placement
+lirc=false

@@ -164,4 +164,4 @@ client.background #1F1F1F
 
 # float force some applications
 #for_window [class="keepassx"] floating enable
-#for_window [class="MPlayer"] floating enable
+for_window [class="MPlayer"] floating enable
