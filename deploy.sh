@@ -13,6 +13,10 @@ if [! -d $HOME/downloads ]; then
   mkdir -p $HOME/downloads/tmp
 fi
 
+# scripts
+rm -r $HOME/.scripts
+ln -s $DOTPATH/.scripts $HOME
+
 # bash files
 rm $HOME/.bashrc
 ln -s $DOTPATH/.bashrc $HOME

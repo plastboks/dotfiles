@@ -19,10 +19,17 @@ set bell-style none &
 /usr/bin/setxkbmap -option ctrl:nocaps &
 
 # setup monitors
-/bin/sh ~/.screenlayout/default.sh
+/bin/sh ~/.screenlayout/default.sh &
 
 # start dunst
 /usr/bin/dunst &
+
+# start mutt notify
+/bin/sh ~/.scripts/mutt-notify.sh &
+
+# ssh
+eval `ssh-agent`
+exec ssh-add
 
 # execute i3
 exec i3
