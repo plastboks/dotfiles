@@ -424,7 +424,7 @@ add_binds("normal", {
         local view = w.view
         local uri = view.hovered_uri or view.uri
         if uri then
-            luakit.spawn(string.format("urxvt -e cclive -f best --filename-format '%%t.%%s' "
+            luakit.spawn(string.format("urxvt -e cclive -f default --filename-format '%%t.%%s' "
                 .. "--output-dir %q --exec='mplayer \"%%f\"' %q",
                 os.getenv("HOME").."/downloads/tmp", uri))
         end 
