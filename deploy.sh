@@ -74,3 +74,7 @@ ln -s $DOTPATH/.gtkrc-2.0 $HOME
 # Screenlayout
 rm -r $HOME/.screenlayout
 ln -s $DOTPATH/.screenlayout $HOME
+
+# dunst
+rm -r $HOME/.config/dunst
+ln -s $DOTPATH/.config/dunst $HOME/.config

@@ -21,5 +21,8 @@ set bell-style none &
 # setup monitors
 /bin/sh ~/.screenlayout/default.sh
 
+# start dunst
+/usr/bin/dunst &
+
 # execute i3
 exec i3
