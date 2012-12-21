@@ -3,10 +3,20 @@
 SCRIPT=`readlink -f $0`
 DOTPATH=`dirname $SCRIPT`
 
+# config dir
+if [! -d $HOME/.config ]; then
+  mkdir $HOME/.config
+fi
+
+# downloads dir
+if [! -d $HOME/downloads ]; then 
+  mkdir -p $HOME/downloads/tmp
+fi
+
 # bash files
 rm $HOME/.bashrc
-rm $HOME/.bash_profile
 ln -s $DOTPATH/.bashrc $HOME
+rm $HOME/.bash_profile
 ln -s $DOTPATH/.bash_profile $HOME
 
 # i3status
@@ -51,8 +61,11 @@ ln -s $DOTPATH/.newsbeuter $HOME
 
 # Luakit
 rm -r $HOME/.config/luakit
-ln -s $DOTPATH/.config/luakit $HOME/.config/luakit
-mkdir -p $HOME/downloads/tmp
+ln -s $DOTPATH/.config/luakit $HOME/.config
+
+# pcmanfm
+rm -r $HOME/.config/pcmanfm
+ln -s $DOTPATH/.config/pcmanfm $HOME/.config
 
 # GTK setup
 rm -r $HOME/.gtkrc-2.0
