@@ -65,11 +65,11 @@ ln -s $DOTPATH/.newsbeuter $HOME
 
 # Luakit
 rm -r $HOME/.config/luakit
-ln -s $DOTPATH/.config/luakit $HOME/.config
+ln -s $DOTPATH/.config/luakit $HOME/.config/luakit
 
 # pcmanfm
 rm -r $HOME/.config/pcmanfm
-ln -s $DOTPATH/.config/pcmanfm $HOME/.config
+ln -s $DOTPATH/.config/pcmanfm $HOME/.config/pcmanfm
 
 # GTK setup
 rm -r $HOME/.gtkrc-2.0
@@ -81,4 +81,4 @@ ln -s $DOTPATH/.screenlayout $HOME
 
 # dunst
 rm -r $HOME/.config/dunst
-ln -s $DOTPATH/.config/dunst $HOME/.config
+ln -s $DOTPATH/.config/dunst $HOME/.config/dunst

@@ -28,8 +28,8 @@ set bell-style none &
 /bin/sh ~/.scripts/mutt-notify.sh &
 
 # ssh
-eval `ssh-agent`
-exec ssh-add
+eval `ssh-agent` &
+exec ssh-add &
 
 # execute i3
 exec i3
