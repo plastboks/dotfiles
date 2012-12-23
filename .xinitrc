@@ -31,5 +31,8 @@ set bell-style none &
 eval `ssh-agent` &
 exec ssh-add &
 
+# dropbox
+~/.dropbox-dist/dropboxd &
+
 # execute i3
 exec i3
