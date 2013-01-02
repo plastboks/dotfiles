@@ -13,7 +13,6 @@ ssh-add-all() {
 }
 
 sshrfs() {
-  ssh-add-all
   sshfs -o workaround=rename -o cache=yes -o uid=$(id -u) -o gid=$(id -g) $1: $2
 }
 
