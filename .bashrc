@@ -9,7 +9,7 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 # Start ssh-agent
-eval `ssh-agent`
+# eval `ssh-agent`
 
 # make functions global
 source $HOME/.scripts/functions.sh
