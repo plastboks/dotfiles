@@ -93,3 +93,7 @@ ln -s $DOTPATH/.config/dunst $HOME/.config/dunst
 # asound
 rm -r $HOME/.asoundrc
 ln -s $DOTPATH/.asoundrc $HOME
+
+# moc player
+rm -r $HOME/.moc
+ln -s $DOTPATH/.moc $HOME
