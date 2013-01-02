@@ -1,1 +1,5 @@
 Theme = green_theme
+Repeat = yes
+Sort = FileName
+ShowFormat = yes
+ShowTime = no
