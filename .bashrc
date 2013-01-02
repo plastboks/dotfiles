@@ -43,7 +43,7 @@ function keychain_append {
 
 # keychain stop
 function keychain_stop {
-  /usr/bin/keychain -k
+  /usr/bin/keychain -k all
 }
 
 
