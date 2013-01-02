@@ -2,15 +2,22 @@
 
 SCRIPT=`readlink -f $0`
 DOTPATH=`dirname $SCRIPT`
+CONFIGDIR=$HOME/.config
+DOWNLOADSDIR=$HOME/downloads
 
 # config dir
-if [! -d $HOME/.config ]; then
-  mkdir $HOME/.config
+if [ -d $CONFIGDIR ]; then
+  echo "${CONFIGDIR} exists"
+else
+  mkdir $CONFIGDIR
 fi
 
 # downloads dir
-if [! -d $HOME/downloads ]; then 
-  mkdir -p $HOME/downloads/tmp
+if [ -d $DOWNLOADSDIR ]; then 
+  echo "${DOWNLOADSDIR} exists, trying to make tmp dir"
+  mkdir $DOWNLOADSDIR/tmp
+else
+  mkdir -p $DOWNLOADSDIR/tmp
 fi
 
 # scripts
@@ -86,3 +93,7 @@ ln -s $DOTPATH/.config/dunst $HOME/.config/dunst
 # asound
 rm -r $HOME/.asoundrc
 ln -s $DOTPATH/.asoundrc $HOME
+
+# moc player
+rm -r $HOME/.moc
+ln -s $DOTPATH/.moc $HOME
