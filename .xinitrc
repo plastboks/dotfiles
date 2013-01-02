@@ -6,7 +6,7 @@ set bell-style none &
 /usr/bin/xset r rate 280 160 &
 
 # screensaver
-/usr/bin/xautolock -time 5 -locker 'i3lock --color=000000' & 
+xautolock -time 1 -locker 'sh ${HOME}/.scripts/lock.sh' & 
 
 # keyboard repeat and delay
 /usr/bin/xset r rate 280 160 &
