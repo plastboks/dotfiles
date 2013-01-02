@@ -12,4 +12,4 @@ if [[ ! -f $HOME/.keychain/$HOSTNAME-sh ]]; then
 fi
 
 # source keychain
-source $HOME/.keychain/$HOSTNAME-sh > /dev/null
+keychain_source

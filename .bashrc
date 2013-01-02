@@ -33,9 +33,15 @@ function keychain_stop {
   /usr/bin/keychain -k
 }
 
+# keychain source
+function keychain_source { 
+  source $HOME/.keychain/$HOSTNAME-sh > /dev/null
+}
+
 if [[ ! -f $HOME/.keychain/$HOSTNAME-sh ]]; then
   keychain_all
 fi
 
 # source keychain
-source $HOME/.keychain/$HOSTNAME-sh > /dev/null
+keychain_source
+ 
