@@ -13,12 +13,12 @@ file=${1/.flac/}
 qual=$2
 echo "File: $file.flac"
 echo "Quality: $qual"
-title=`metaflac --show-tag="title" "$file.flac" | sed "s/title=//"`
-artist=`metaflac --show-tag="artist" "$file.flac" | sed "s/artist=//"`
-album=`metaflac --show-tag="album" "$file.flac" | sed "s/album=//"`
-date=`metaflac --show-tag="date" "$file.flac" | sed "s/date=//"`
-genre=`metaflac --show-tag="genre" "$file.flac" | sed "s/genre=//"`
-track=`metaflac --show-tag="tracknumber" "$file.flac" | sed "s/tracknumber=//"`
+title=`metaflac --show-tag="title" "$file.flac" | sed -e "s/title=//gI"`
+artist=`metaflac --show-tag="artist" "$file.flac" | sed -e "s/artist=//gI"`
+album=`metaflac --show-tag="album" "$file.flac" | sed -e "s/album=//gI"`
+date=`metaflac --show-tag="date" "$file.flac" | sed -e "s/date=//gI"`
+genre=`metaflac --show-tag="genre" "$file.flac" | sed -e "s/genre=//gI"`
+track=`metaflac --show-tag="tracknumber" "$file.flac" | sed -e "s/tracknumber=//gI"`
 
 flac -c -d "$file.flac" | oggenc -t "$title" -a "$artist" -G "$genre" -l "$album" \
  -d "$date" -n "$track" -o $file.ogg -q $qual -
