@@ -8,6 +8,7 @@
 # aliases
 alias ls='ls --color=auto'
 alias cpa='rsync -aP'
+alias enable_alert='PS1="$PS1\a"'
 
 PS1='[\u@\h \W]\$ '
 

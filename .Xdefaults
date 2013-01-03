@@ -1,3 +1,6 @@
+!# -- Some rxvt definitions -- #
+
+!# colors
 URxvt.color0  : #2E2E34343636
 URxvt.color8  : #555557575353
 ! red
@@ -25,12 +28,14 @@ URxvt.color15 : #EEEEEEEEECEC
 URxvt*foreground:White
 URxvt*background:#1F1F1F
 
-! fonts
+!# fonts
 ! run "fc-list" for a list of available fonts
 URxvt*font: xft:LiberationMono-Regular:pixelsize=12
 
+!# generic
 URxvt*scrollBar: False
 URxvt*scrollTtyOutput: False
+URxvt*urgentOnBell: True
 URxvt*scrollTtyKeypress: True
 URxvt*secondaryScroll: True
 URxvt*saveLines: 100000
