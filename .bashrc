@@ -67,7 +67,7 @@ function keychain_stop {
 # keychain source
 function keychain_source { 
   CHAINFILE=$HOME/.keychain/$HOSTNAME-sh
-  if [[ -f $CHAINFILE $]]; then
+  if [[ -f $CHAINFILE ]]; then
     source $HOME/.keychain/$HOSTNAME-sh > /dev/null
   else
     echo "There does not seem to be a ${CHANFILE}. Maybe run keychain?"
