@@ -12,8 +12,25 @@ alias cpa='rsync -aP'
 PS1='[\u@\h \W]\$ '
 
 
-# make functions global
-source $HOME/.scripts/functions.sh
+# PDF merge function using ghostscript
+pdfmerge() {
+  gs "-dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=./$@ $*"
+}
+
+
+# sshfs mount with fixed arguments
+sshrfs() {
+  sshfs -o workaround=rename -o cache=yes -o uid=$(id -u) -o gid=$(id -g) $1: $2
+}
+
+
+# This is for now redundant, but will keep it for now...
+ssh-add-all() {
+  eval `ssh-agent`
+  for file in `ls $HOME/.ssh/id_* | grep -v .pub`; do
+    ssh-add $file
+  done
+}
 
 
 # keychain add
@@ -66,4 +83,4 @@ fi
 
 # source keychain
 keychain_source
- 
+

@@ -1,2 +1,0 @@
-# some nice aliases
-
