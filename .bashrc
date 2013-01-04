@@ -45,6 +45,7 @@ function keychain_all {
       /usr/bin/keychain $file
     done
   fi
+  keychain_source
 }
 
 
@@ -70,6 +71,7 @@ function keychain_source {
   CHAINFILE=$HOME/.keychain/$HOSTNAME-sh
   if [[ -f $CHAINFILE ]]; then
     source $HOME/.keychain/$HOSTNAME-sh > /dev/null
+    source $HOME/.keychain/$HOSTNAME-sh-gpg > /dev/null
   else
     echo "There does not seem to be a ${CHANFILE}. Maybe run keychain?"
   fi
