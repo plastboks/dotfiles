@@ -36,16 +36,21 @@ ssh-add-all() {
 
 # keychain add
 function keychain_all {
-  for file in `ls $HOME/.ssh/id_* | grep -v .pub`; do
-    /usr/bin/keychain $file
-  done
-
-  if [[ -d $HOME/keys ]]; then
-    for file in `ls $HOME/keys/id_* | grep -v .pub`; do
+  read -p "Load ssh keys [y/N] " -n 1 -r
+  if [[ $REPLY =~ [Yy]$ ]]; then
+    # load keys in ~/.ssh
+    for file in `ls $HOME/.ssh/id_* | grep -v .pub`; do
       /usr/bin/keychain $file
     done
+    # try to load keys in ~/keys
+    if [[ -d $HOME/keys ]]; then
+      for file in `ls $HOME/keys/id_* | grep -v .pub`; do
+        /usr/bin/keychain $file
+      done
+    fi
+    # source the result
+    keychain_source
   fi
-  keychain_source
 }
 
 
@@ -73,7 +78,7 @@ function keychain_source {
     source $HOME/.keychain/$HOSTNAME-sh > /dev/null
     source $HOME/.keychain/$HOSTNAME-sh-gpg > /dev/null
   else
-    echo "There does not seem to be a ${CHANFILE}. Maybe run keychain?"
+    printf "\nThere does not seem to be a ${CHANFILE}. Maybe run keychain?\n"
   fi
 }
 
