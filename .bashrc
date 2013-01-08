@@ -92,7 +92,8 @@ function wificonnect {
 # network manager nmcli wrapper function
 function wifidisconnect {
   # usage: wifidisconnect name (ssid since wificonnect uses ssid for name)
-  /usr/bin/nmcli con down id $1
+  # /usr/bin/nmcli con down id $1
+  /usr/bin/nmcli nm wifi off
 }
 
 # if keychain has been killed then restart it
