@@ -83,6 +83,18 @@ function keychain_source {
 }
 
 
+# network manager nmcli wrapper function
+function wificonnect {
+  # usage: wificonnect ssid password
+  /usr/bin/nmcli dev wifi con $1 password $2 name $1
+}
+
+# network manager nmcli wrapper function
+function wifidisconnect {
+  # usage: wifidisconnect name (ssid since wificonnect uses ssid for name)
+  /usr/bin/nmcli con down id $1
+}
+
 # if keychain has been killed then restart it
 if [[ ! -f $HOME/.keychain/$HOSTNAME-sh ]]; then
   keychain_all
