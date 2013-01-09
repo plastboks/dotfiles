@@ -154,6 +154,9 @@ bar {
         status_command i3status
 }
 
+# lock screen
+bindsym $mod+ctrl+l exec xautolock -locknow
+
 # Custom part of my config file
 
 # start windows without borders by default
@@ -165,3 +168,4 @@ client.background #1F1F1F
 # float force some applications
 #for_window [class="keepassx"] floating enable
 for_window [class="MPlayer"] floating enable
+
