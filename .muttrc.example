@@ -14,6 +14,9 @@ set editor = "vim"
 # beep on new mail
 set beep_new
 
+# HTML mail
+auto_view text/html
+
 # Basic config, you can leave this as is
 set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
