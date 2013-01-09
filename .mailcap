@@ -1,2 +1,4 @@
 text/html; links %s; nametemplate=%s.html
 text/html; links -dump %s; nametemplate=%s.html; copiousoutput
+application/pdf; pdftohtml -q -stdout %s | links -T text/html; copiousoutput
+
