@@ -30,6 +30,10 @@ ln -s $DOTPATH/.bashrc $HOME
 rm $HOME/.bash_profile
 ln -s $DOTPATH/.bash_profile $HOME
 
+# gnupg
+rm -r $HOME/.gnupg
+ln -s $DOTPATH/.gnupg $HOME
+
 # i3status
 rm $HOME/.i3status.conf
 ln -s $DOTPATH/.i3status.conf $HOME
