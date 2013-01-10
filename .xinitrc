@@ -11,9 +11,6 @@ xautolock -time 5 -locker 'sh ${HOME}/.scripts/lock.sh' &
 # keyboard repeat and delay
 /usr/bin/xset r rate 280 160 &
 
-# Autostart the Dropbox deamon
-#sleep 2s && ~/.dropbox-dist/dropboxd &
-
 # keyboard settings
 /usr/bin/setxkbmap -option grp:shift_toggle,grp_led:scroll us,no &
 /usr/bin/setxkbmap -option ctrl:nocaps &
@@ -27,12 +24,8 @@ xautolock -time 5 -locker 'sh ${HOME}/.scripts/lock.sh' &
 # start mutt notify
 /bin/sh ~/.scripts/mutt-notify.sh &
 
-# ssh
-eval `ssh-agent` &
-exec ssh-add &
-
-# dropbox
-~/.dropbox-dist/dropboxd &
+# gpg agent
+eval `gpg-agent --daemon --enable-ssh-support --use-standard-socket`
 
 # execute i3
 exec i3
