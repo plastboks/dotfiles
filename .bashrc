@@ -100,13 +100,4 @@ function wifidisconnect {
   /usr/bin/nmcli nm wifi off
 }
 
-# if keychain has been killed then restart it
-#if [[ ! -f $HOME/.keychain/$HOSTNAME-sh ]]; then
-#  keychain_all
-#fi
-
 eval `gpg-agent --daemon --use-standard-socket`
-
-# source keychain
-#keychain_source
-
