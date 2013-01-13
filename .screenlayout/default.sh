@@ -2,9 +2,16 @@
 
 # -- Gray -- #
 if [[ `hostname -s` = gray ]]; then 
+  # // Standard layout
+  #/usr/bin/xrandr \
+  #  --output VGA-1 --mode 1920x1080 --pos 0x120 --rotate normal \
+  #  --output DVI-I-1 --mode 1920x1200 --pos 1920x0 --rotate normal \
+  #  --output HDMI-1 --off
+  
+  # // Alternative layout with one monitor rotated
   /usr/bin/xrandr \
-    --output VGA-1 --mode 1920x1080 --pos 0x120 --rotate normal \
-    --output DVI-I-1 --mode 1920x1200 --pos 1920x0 --rotate normal \
+    --output VGA-1 --mode 1920x1080 --pos 0x0 --rotate left \
+    --output DVI-I-1 --mode 1920x1200 --pos 1080x0 --rotate normal \
     --output HDMI-1 --off
 fi
 
