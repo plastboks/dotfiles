@@ -15,6 +15,9 @@ xautolock -time 5 -locker 'sh ${HOME}/.scripts/lock.sh' &
 /usr/bin/setxkbmap -option grp:shift_toggle,grp_led:scroll us,no &
 /usr/bin/setxkbmap -option ctrl:nocaps &
 
+# mouse settings
+/bin/sh ~/.scripts/mouse.sh & 
+
 # setup monitors
 /bin/sh ~/.screenlayout/default.sh &
 
