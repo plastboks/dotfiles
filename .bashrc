@@ -100,4 +100,5 @@ function wifidisconnect {
   /usr/bin/nmcli nm wifi off
 }
 
-eval `gpg-agent --daemon --use-standard-socket`
+eval $(cat ~/.gpg-agent-info)
+eval $(cut -d= -f 1 < ~/.gpg-agent-info | xargs echo export)
