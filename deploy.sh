@@ -12,14 +12,6 @@ else
   mkdir $CONFIGDIR
 fi
 
-# downloads dir
-if [ -d $DOWNLOADSDIR ]; then 
-  echo "${DOWNLOADSDIR} exists, trying to make tmp dir"
-  mkdir $DOWNLOADSDIR/tmp
-else
-  mkdir -p $DOWNLOADSDIR/tmp
-fi
-
 # scripts
 rm -r $HOME/.scripts
 ln -s $DOTPATH/.scripts $HOME
