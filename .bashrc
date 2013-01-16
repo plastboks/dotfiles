@@ -111,4 +111,9 @@ function wifidisconnect {
   /usr/bin/nmcli nm wifi off
 }
 
-gar
+# gpg-agent
+if [ ! -f ~/.gpg-agent-info ]; then
+  gac
+else
+  gar
+fi

@@ -28,7 +28,9 @@ xautolock -time 5 -locker 'sh ${HOME}/.scripts/lock.sh' &
 /bin/sh ~/.scripts/mutt-notify.sh &
 
 # gpg agent
-gpg-agent --daemon --enable-ssh-support --use-standard-socket --write-env-file
+if [ ! -f ~/.gpg-agent-info ]; then
+  gpg-agent --daemon --enable-ssh-support --use-standard-socket --write-env-file
+fi
 
 # execute i3
 exec i3
