@@ -40,6 +40,17 @@ function ssh-add-all() {
 }
 
 
+# gpg-agent create
+function gac {
+  /usr/bin/gpg-agent --daemon --enable-ssh-support --use-standard-socket --write-env-file
+}
+
+# gpg-agent read 
+function gar {
+  eval $(cat ~/.gpg-agent-info)
+  eval $(cut -d= -f 1 < ~/.gpg-agent-info | xargs echo export)
+}
+
 # keychain add
 function keychain_all {
   read -p "Load ssh keys [y/N] " -n 1 -r
@@ -100,5 +111,4 @@ function wifidisconnect {
   /usr/bin/nmcli nm wifi off
 }
 
-eval $(cat ~/.gpg-agent-info)
-eval $(cut -d= -f 1 < ~/.gpg-agent-info | xargs echo export)
+gar
