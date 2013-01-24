@@ -70,6 +70,10 @@ ln -s $DOTPATH/.newsbeuter $HOME
 rm -r $HOME/.config/luakit
 ln -s $DOTPATH/.config/luakit $HOME/.config/luakit
 
+# dwb
+rm -r $HOME/.config/dwb
+ln -s $DOTPATH/.config/dwb $HOME/.config/dwb
+
 # pcmanfm
 rm -r $HOME/.config/pcmanfm
 ln -s $DOTPATH/.config/pcmanfm $HOME/.config/pcmanfm
