@@ -1,5 +1,5 @@
-"call pathogen#runtime_append_all_bundles()
-"call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 
 " Wrap too long lines
@@ -22,6 +22,9 @@ set wildchar=<Tab>
 
 " show line numbers
 set number
+
+" show tabs
+set listchars=tab:▸\ 
 
 " Fold using markers {{{
 " like this
@@ -81,6 +84,11 @@ set bg=dark
 
 " Always show the menu, insert longest match
 set completeopt=menuone,longest
+
+"Invisible character colors
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
