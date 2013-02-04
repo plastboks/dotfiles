@@ -5,9 +5,8 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # gpg agent
-if [ ! -f ~/.gpg-agent-info ]; then
-  gpg-agent --daemon --enable-ssh-support --use-standard-socket --write-env-file
-fi
+rm ~/.gpg-agent-info
+gpg-agent --daemon --enable-ssh-support --use-standard-socket --write-env-file
 
 # source bashrc 
 source $HOME/.bashrc
