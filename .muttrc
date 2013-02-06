@@ -1,29 +1,23 @@
 # A basic .muttrc for use with Gmail
 
-set imap_user = "email"
-set imap_pass = "password"
-set smtp_url = "smtp://email@smtp.gmail.com:587/"
-set smtp_pass = "password"
-set from = "email"
-set realname = "realname"
+source ~/.mutt/sources.muttrc
 
+# editor
 set editor = "vim"
 
 # beep on new mail
 set beep_new
 
-# HTML mail
+# html mail
 auto_view text/html
 
-set folder = "imaps://imap.gmail.com:993"
-set spoolfile = "+INBOX"
+# set default account
+source ~/.mutt/accounts/default
+
 set imap_check_subscribed
-set hostname = gmail.com
 set mail_check = 120
 set timeout = 300
 set imap_keepalive = 300
-set postponed = "+[GMail]/Drafts"
-set record = "+[GMail]/Sent Mail"
 set header_cache=~/.mutt/cache/headers
 set message_cachedir=~/.mutt/cache/bodies
 set certificate_file=~/.mutt/certificates
@@ -41,7 +35,6 @@ auto_view text/html
 bind editor <Tab> complete-query
 bind editor ^T complete
 bind editor <space> noop 
-set signature="~/.mutt/signature"
 
 # Gmail-style keyboard shortcuts
 macro index,pager y "<enter-command>unset trash\n <delete-message>" "Gmail archive message"

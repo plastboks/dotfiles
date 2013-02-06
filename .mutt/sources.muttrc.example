@@ -1,0 +1,10 @@
+# accounts
+account-hook . "unset imap_user; unset imap_pass; unset tunnel" # unset first!
+
+set my_test_example =  "imaps://text@example.com@imap.gmail.com:993"
+
+macro index,pager ca1 "<change-folder>$my_test_example/INBOX<enter>"
+
+account-hook $my_test_example `gpg -dq ~/.mutt/authenticate/text_example_com.imap.gpg`
+
+folder-hook $my_test_example 'source ~/.mutt/accounts/text_example_com'
