@@ -1,0 +1,11 @@
+set smtp_url = "smtp://test@example.com@smtp.gmail.com:587/"
+source "gpg -dq ~/.mutt/authenticate/test_example_com.smtp.gpg |"
+
+set from = "test@example.com"
+set realname = "Real Name"
+
+set folder = "imaps://test@example.com@imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[GMail]/Drafts"
+set signature="~/.mutt/signatures/test_example_com"
+set record = "+[GMail]/Sent Mail"

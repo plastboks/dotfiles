@@ -1,4 +1,6 @@
 *
 !.gitignore
-!certificates
-!signature.example
+!/accounts/
+!/signatures/
+!/authenticate/
+!sources.muttrc.example
