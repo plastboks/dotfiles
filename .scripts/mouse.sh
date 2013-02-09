@@ -3,7 +3,7 @@
 # A simple script for mouse scroll emulation
 #
 
-MOUSENAME="Kensington      Kensington USB/PS2 Orbit" # The six spaces is important
+MOUSENAME="Kensington Kensington USB/PS2 Orbit" # The six spaces is important
 
 # enable mouse scrolling for a mouse without scrollwheel
 /usr/bin/xinput set-int-prop "${MOUSENAME}" "Evdev Wheel Emulation" 8 1
