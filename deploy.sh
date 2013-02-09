@@ -49,6 +49,10 @@ ln -s $DOTPATH/.vimrc $HOME
 # mutt
 rm -r $HOME/.mutt
 ln -s $DOTPATH/.mutt $HOME
+rm -r $HOME/.muttrc
+ln -s $DOTPATH/.muttrc $HOME
+rm -r $HOME/.mailcap
+ln -s $DOTPATH/.mailcap $HOME
 
 # Xkbmap
 rm -r $HOME/.Xkbmap

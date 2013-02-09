@@ -1,5 +1,5 @@
-"call pathogen#runtime_append_all_bundles()
-"call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 
 " Wrap too long lines
@@ -16,12 +16,20 @@ set expandtab
 
 " guess indentation
 set autoindent
+set smartindent
+
+" cursorline
+" set cursorline
 
 " Expand the command line using tab
 set wildchar=<Tab>
 
 " show line numbers
 set number
+
+" show tabs and eol
+set listchars=tab:▸\ ,eol:$
+set nolist
 
 " Fold using markers {{{
 " like this
@@ -30,6 +38,9 @@ set number
 
 " enable all features
 set nocompatible
+
+" show statusline
+set laststatus=2
 
 " powerful backspaces
 set backspace=indent,eol,start
@@ -41,13 +52,13 @@ set hlsearch
 set incsearch
 
 " ignore case while searching
-set ignorecase
+" set ignorecase
 
 " don't wrap words
 set textwidth=0
 
 " history
-set history=50
+set history=200
 
 " 1000 undo levels
 set undolevels=1000
@@ -82,13 +93,18 @@ set bg=dark
 " Always show the menu, insert longest match
 set completeopt=menuone,longest
 
+"Invisible character colors
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+
+
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
-" autocmd BufReadPost *
-"  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-"  \   exe "normal g`\"" |
-"  \ endif
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
 
 " syntax highlighting groups
 hi Comment      ctermfg=12
@@ -104,6 +120,7 @@ hi Error        ctermfg=11
 hi Todo         ctermfg=1
 
 
+""" GPG AREA
 " Transparent editing of gpg encrypted files.
 augroup encrypted
 au!
@@ -135,3 +152,28 @@ autocmd BufWritePre,FileWritePre    *.gpg let &sh=shsave
 autocmd BufWritePost,FileWritePost  *.gpg silent u
 autocmd BufWritePost,FileWritePost  *.gpg set nobin
 augroup END
+
+
+""" TESTAREA
+set more                                    " ---more--- like less
+set scrolloff=5                             " lines above/below cursor
+set showcmd                                 " show cmds being typed
+set title                                   " window title
+
+if &term =~ "xterm\\|rxvt"
+  " use an orange cursor in insert mode
+  let &t_SI = "\<Esc>]12;orange\x7"
+  " use a red cursor otherwise
+  let &t_EI = "\<Esc>]12;red\x7"
+  silent !echo -ne "\033]12;red\007"
+  " reset cursor when vim exits
+  autocmd VimLeave * silent !echo -ne "\033]112\007"
+  " use \003]12;gray\007 for gnome-terminal
+endif
+
+set cursorline
+set cursorcolumn
+highlight CursorLine term=bold cterm=bold ctermbg=235
+highlight CursorColumn ctermbg=235
+highlight Search ctermfg=Yellow ctermbg=NONE cterm=bold,underline
+

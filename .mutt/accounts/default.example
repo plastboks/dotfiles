@@ -1,0 +1,2 @@
+set folder = "imaps://text@example.com@imap.gmail.com:993"
+set spoolfile = "+INBOX"
