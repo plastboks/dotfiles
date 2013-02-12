@@ -167,12 +167,12 @@ if &term =~ "xterm\\|rxvt"
   let &t_EI = "\<Esc>]12;red\x7"
   silent !echo -ne "\033]12;red\007"
   " reset cursor when vim exits
-  autocmd VimLeave * silent !echo -ne "\033]112\007"
+  "autocmd VimLeave * silent !echo -ne "\033]112\007"
   " use \003]12;gray\007 for gnome-terminal
 endif
 
-set cursorline
-set cursorcolumn
+"set cursorline
+"set cursorcolumn
 highlight CursorLine term=bold cterm=bold ctermbg=235
 highlight CursorColumn ctermbg=235
 highlight Search ctermfg=Yellow ctermbg=NONE cterm=bold,underline
