@@ -2,6 +2,8 @@
 # ~/.bashrc
 #
 
+export EDITOR='vim'
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -10,8 +12,8 @@ alias ls='ls --color=auto'
 alias cpa='rsync -aP'
 alias enable_alert='PS1="$PS1\a"'
 
-PS1='[\u@\h \W]\$ '
-
+#PS1='[\u@\h \W]\$ '
+PS1="[\[\033[36m\]\u@\\h \\W\[\033[m\]]\$ "
 
 # PDF merge function using ghostscript
 function pdfmerge() {
