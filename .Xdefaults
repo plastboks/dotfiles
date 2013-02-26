@@ -1,7 +1,7 @@
 !# -- Some rxvt definitions -- #
 
 !# colors
-URxvt.color0  : #2E2E34343636
+URxvt.color0  : #1F1F1F1F1F1F
 URxvt.color8  : #555557575353
 ! red
 URxvt.color1  : #CCCC00000000
@@ -26,7 +26,7 @@ URxvt.color7  : #D3D3D7D7CFCF
 URxvt.color15 : #EEEEEEEEECEC
 
 URxvt*foreground:White
-URxvt*background:#1F1F1F
+URxvt*background:0
 
 !# fonts
 ! run "fc-list" for a list of available fonts
