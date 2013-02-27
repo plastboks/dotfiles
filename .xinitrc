@@ -2,18 +2,11 @@
 set bell-style none &
 /usr/bin/xset b off &
 
-# set cursor speed
-/usr/bin/xset r rate 280 160 &
-
 # screensaver
 xautolock -time 5 -locker 'sh ${HOME}/.scripts/lock.sh' & 
 
-# keyboard repeat and delay
-/usr/bin/xset r rate 280 160 &
-
 # keyboard settings
-/usr/bin/setxkbmap -option grp:shift_toggle,grp_led:scroll us,no &
-/usr/bin/setxkbmap -option ctrl:nocaps &
+/bin/sh ~/.scripts/keyboard.sh &
 
 # mouse settings
 /bin/sh ~/.scripts/mouse.sh & 
