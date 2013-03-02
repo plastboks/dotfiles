@@ -1,6 +1,5 @@
-# disable the annonying bell
-set bell-style none &
-/usr/bin/xset b off &
+# bell script
+/bin/sh ~/.scripts/bell.sh &
 
 # screensaver
 xautolock -time 5 -locker 'sh ${HOME}/.scripts/lock.sh' & 
