@@ -8,3 +8,29 @@ refresh-on-startup            yes
 reload-time                   10
 download-path                 ~/downloads
 max-downloads                 2
+
+# vim-like navigation
+bind-key j down
+bind-key k up
+bind-key h left
+bind-key l right 
+bind-key m toggle-show-read-feeds
+
+# show-read-feeds no
+notify-xterm yes
+reload-only-visible-feeds yes
+suppress-first-reload yes
+#refresh-on-startup no
+# reload-only-visible-feeds yes
+confirm-exit yes
+goto-next-feed no
+max-items 500
+refresh-on-startup no
+show-read-feeds no
+show-read-articles no
+text-width 72
+prepopulate-query-feeds yes
+
+# Podbeuter config
+download-path ~/Podcasts/%n
+# podcast-auto-enqueue yes
