@@ -15,4 +15,3 @@ bind-key k up
 bind-key h left
 bind-key l right 
 bind-key m toggle-show-read-feeds
-
