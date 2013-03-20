@@ -14,6 +14,9 @@ auto_view text/html
 # set default account
 source ~/.mutt/accounts/default
 
+# print command
+set print_command="$HOME/.scripts/print2pdf.sh"
+
 set imap_check_subscribed
 set mail_check = 120
 set timeout = 300
