@@ -1,6 +1,7 @@
 #!/bin/bash
 # simple bluetooth phone detection tool.
 # inspiration from github.com/vlachoudis/DetectPhone
+# use "hcitool scan" for scanning of bluetooth devices
 
 BTHW='F8:5F:2A:04:A3:46'
 SLEEP=10
