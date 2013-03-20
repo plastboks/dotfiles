@@ -12,6 +12,8 @@ do
   if [ $RC = 0 ]; then
     xautolock -disable
   else
+    xautolock -enable
+    sleep 1
     xautolock -locknow
   fi
   sleep $SLEEP
