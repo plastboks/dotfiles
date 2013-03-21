@@ -3,7 +3,12 @@
 # This script was yanked from archlinux forum post 101413.
 # Thanks to user Foucault for supplying it.
 # 
-# Example usage is: for file in *.flac; do flac2ogg.sh "$i" QUALITY; done
+# Example script usage:
+#   `flag2ogg.sh 'file' 'quality'`
+#
+# Example usage is for multiple files in a directory: 
+#   `for file in *.flac; do flac2ogg.sh $file QUALITY; done`
+#
 # Quality is typical 6 for CDs, (Higher is better).
 #
 # Archlinux package vorbis-tools is needed for oggenc.
