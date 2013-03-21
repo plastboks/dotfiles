@@ -11,7 +11,7 @@ do
   l2ping -t 5 -c 1 $BTHW >/dev/null 2>/dev/null 
   RC=$?
   if [ $RC = 0 ]; then
-    xautolock -disable
+    #xautolock -disable
   else
     xautolock -enable
     sleep 1
