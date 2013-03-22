@@ -177,3 +177,6 @@ highlight CursorLine term=bold cterm=bold ctermbg=235
 highlight CursorColumn ctermbg=235
 highlight Search ctermfg=Yellow ctermbg=NONE cterm=bold,underline
 
+" cpp highlighting for arduino files
+autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
+
