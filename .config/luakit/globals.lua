@@ -15,11 +15,14 @@ globals = {
 }
 
 -- Make useragent
-local _, arch = luakit.spawn_sync("uname -sm")
+-- TEMPORARY FIX FOR THE HANG PROBLEM .
+-- local _, arch = luakit.spawn_sync("uname -sm")
 -- Only use the luakit version if in date format (reduces identifiability)
 local lkv = string.match(luakit.version, "^(%d+.%d+.%d+)")
 globals.useragent = string.format("Mozilla/5.0 (%s) AppleWebKit/%s+ (KHTML, like Gecko) WebKitGTK+/%s luakit%s",
-    string.sub(arch, 1, -2), luakit.webkit_user_agent_version,
+    -- TEMPORARY FIX FOR THE HANG PROBLEM
+    --string.sub(arch, 1, -2), luakit.webkit_user_agent_version,
+    string.sub('Linux x86_64', 1, -2), luakit.webkit_user_agent_version,
     luakit.webkit_version, (lkv and ("/" .. lkv)) or "")
 
 -- Search common locations for a ca file which is used for ssl connection validation.
