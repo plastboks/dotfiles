@@ -43,3 +43,13 @@ function wifidisconnect {
   /usr/bin/nmcli nm wifi off
 }
 
+
+# simple network scan
+function wifiscan {
+  /usr/sbin/iwlist wlp3s0 scanning | grep ESSID
+}
+
+# webcamtest
+function webcamtest {
+  /usr/bin/mplayer tv:// -tv driver=v4l2:width=352:height=288  
+}

@@ -22,7 +22,7 @@ fi
 /usr/bin/dunst &
 
 # start mutt notify
-/bin/sh ~/.scripts/mutt-notify.sh &
+#/bin/sh ~/.scripts/mutt-notify.sh &
 
 # gpg agent
 if [ ! -f ~/.gpg-agent-info ]; then
