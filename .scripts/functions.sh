@@ -26,14 +26,14 @@ function sshAddAll() {
 
 # network card up
 function wifiup {
-  WIRELESSDEVICE=`ip a | grep -i noop | awk '/:/ { sub(":", "", $2); print $2 }'`
+  WIRELESSDEVICE=`ip a | egrep -i 'mq|noop' | awk '/:/ { sub(":", "", $2); print $2 }'`
   sudo ip link set $WIRELESSDEVICE up
 }
 
 
 # network card up
 function wifidown {
-  WIRELESSDEVICE=`ip a | grep -i noop | awk '/:/ { sub(":", "", $2); print $2 }'`
+  WIRELESSDEVICE=`ip a | egrep -i 'mq|noop' | awk '/:/ { sub(":", "", $2); print $2 }'`
   sudo ip link set $WIRELESSDEVICE down
 }
 
@@ -53,8 +53,8 @@ function wifidisconnect {
 
 # simple network scan
 function wifiscan {
-  WIRELESSDEVICE=`ip a | grep -i noop | awk '/:/ { sub(":", "", $2); print $2 }'`
-  /usr/sbin/iwlist $WIRELESSDEVICE scanning | grep ESSID
+  WIRELESSDEVICE=`ip a | egrep -i 'mq|noop' | awk '/:/ { sub(":", "", $2); print $2 }'`
+  sudo iw dev wlan0 scan | egrep -i --color 'SSID|signal'
 }
 
 
