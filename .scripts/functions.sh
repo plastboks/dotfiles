@@ -10,12 +10,6 @@ function pdfmerge() {
 }
 
 
-# pacman update (because i am a lazy motherfu**er)
-function pacman-upgrade() {
-  sudo pacman -Syu
-}
-
-
 # sshfs mount with fixed arguments
 function sshrfs() {
   sshfs -o workaround=rename -o cache=yes -o uid=$(id -u) -o gid=$(id -g) $1: $2
@@ -23,11 +17,24 @@ function sshrfs() {
 
 
 # This is for now redundant, but will keep it for now...
-function ssh-add-all() {
+function sshAddAll() {
   eval `ssh-agent`
   for file in `ls $HOME/.ssh/id_* | grep -v .pub`; do
     ssh-add $file
   done
+}
+
+# network card up
+function wifiup {
+  WIRELESSDEVICE=`ip a | grep -i noop | awk '/:/ { sub(":", "", $2); print $2 }'`
+  sudo ip link set $WIRELESSDEVICE up
+}
+
+
+# network card up
+function wifidown {
+  WIRELESSDEVICE=`ip a | grep -i noop | awk '/:/ { sub(":", "", $2); print $2 }'`
+  sudo ip link set $WIRELESSDEVICE down
 }
 
 
@@ -46,8 +53,10 @@ function wifidisconnect {
 
 # simple network scan
 function wifiscan {
-  /usr/sbin/iwlist wlp3s0 scanning | grep ESSID
+  WIRELESSDEVICE=`ip a | grep -i noop | awk '/:/ { sub(":", "", $2); print $2 }'`
+  /usr/sbin/iwlist $WIRELESSDEVICE scanning | grep ESSID
 }
+
 
 # webcamtest
 function webcamtest {
