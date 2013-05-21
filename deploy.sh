@@ -12,6 +12,10 @@ else
   mkdir $CONFIGDIR
 fi
 
+# bin dir
+rm -r $HOME/.bin
+ln -s $DOTPATH/.bin $HOME
+
 # scripts
 rm -r $HOME/.scripts
 ln -s $DOTPATH/.scripts $HOME

@@ -5,11 +5,11 @@ call pathogen#helptags()
 " Wrap too long lines
 set wrap
 
-" Tabs are 2 characters
-set tabstop=2
+" Tabs are 4 characters
+set tabstop=4
 
-" (Auto)indent uses 2 characters
-set shiftwidth=2
+" (Auto)indent uses 4 characters
+set shiftwidth=4
 
 " spaces instead of tabs
 set expandtab
@@ -180,3 +180,8 @@ highlight Search ctermfg=Yellow ctermbg=NONE cterm=bold,underline
 " cpp highlighting for arduino files
 autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 
+" PHP Code Sniffer binary (default = "phpcs")
+let g:phpqa_codesniffer_cmd="~/.bin/php/PHP_CodeSniffer/scripts/phpcs"
+
+" PHP Mess Detector binary (default = "phpmd")
+" let g:phpqa_messdetector_cmd='~/.bin/php/phpcs')
