@@ -1,1 +1,6 @@
 gtk-icon-theme-name = "Tangerine"
+
+style "uzbl" { 
+    GtkRange::slider-width = 0
+}
+widget "Uzbl*" style "uzbl"
