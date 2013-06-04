@@ -78,6 +78,10 @@ ln -s $DOTPATH/.newsbeuter $HOME
 rm -r $HOME/.config/luakit
 ln -s $DOTPATH/.config/luakit $HOME/.config/luakit
 
+# Uzbl
+rm -r $HOME/.config/uzbl
+ln -s $DOTPATH/.config/uzbl $HOME/.config/uzbl
+
 # dwb
 rm -r $HOME/.config/dwb
 ln -s $DOTPATH/.config/dwb $HOME/.config/dwb
@@ -99,8 +103,8 @@ rm -r $HOME/.config/dunst
 ln -s $DOTPATH/.config/dunst $HOME/.config/dunst
 
 # asound
-rm -r $HOME/.asoundrc
-ln -s $DOTPATH/.asoundrc $HOME
+#rm -r $HOME/.asoundrc
+#ln -s $DOTPATH/.asoundrc $HOME
 
 # moc player
 rm -r $HOME/.moc
