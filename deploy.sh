@@ -74,6 +74,10 @@ ln -s $DOTPATH/.tmux.conf $HOME
 rm -r $HOME/.newsbeuter
 ln -s $DOTPATH/.newsbeuter $HOME
 
+# Irssi
+rm -r $HOME/.irssi
+ln -s $DOTPATH/.irssi $HOME
+
 # Luakit
 rm -r $HOME/.config/luakit
 ln -s $DOTPATH/.config/luakit $HOME/.config/luakit
