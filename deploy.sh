@@ -35,7 +35,7 @@ printf "\n"
 read -p "Laptop (different i3status) [y/N]" -n 1 -r
 if [[ $REPLY =~ [Yy]$ ]]; then
   rm $HOME/.i3status.conf
-  ln -s $DOTPATH/.i3status.conf.laptop $HOME
+  ln -s $DOTPATH/.i3status.conf.laptop $HOME/.i3status.conf
 else 
   rm $HOME/.i3status.conf
   ln -s $DOTPATH/.i3status.conf $HOME
