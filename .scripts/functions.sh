@@ -62,3 +62,8 @@ function wifiscan {
 function webcamtest {
   /usr/bin/mplayer tv:// -tv driver=v4l2:width=352:height=288  
 }
+
+#open vpn
+function runvpn {
+  sudo /usr/bin/openvpn --config /etc/openvpn/mullvad_linux.conf --writepid /etc/openvpn/run.pid
+}

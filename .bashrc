@@ -17,6 +17,7 @@ source ~/.scripts/aliases.sh
 
 # gpg-agent create
 function gac {
+  rm ~/.gpg-agent-info
   /usr/bin/gpg-agent --daemon --enable-ssh-support --use-standard-socket --write-env-file
 }
 

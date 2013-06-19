@@ -12,6 +12,10 @@ else
   mkdir $CONFIGDIR
 fi
 
+# bin dir
+rm -r $HOME/.bin
+ln -s $DOTPATH/.bin $HOME
+
 # scripts
 rm -r $HOME/.scripts
 ln -s $DOTPATH/.scripts $HOME
@@ -77,9 +81,17 @@ ln -s $DOTPATH/.tmux.conf $HOME
 rm -r $HOME/.newsbeuter
 ln -s $DOTPATH/.newsbeuter $HOME
 
+# Irssi
+rm -r $HOME/.irssi
+ln -s $DOTPATH/.irssi $HOME
+
 # Luakit
 rm -r $HOME/.config/luakit
 ln -s $DOTPATH/.config/luakit $HOME/.config/luakit
+
+# Uzbl
+rm -r $HOME/.config/uzbl
+ln -s $DOTPATH/.config/uzbl $HOME/.config/uzbl
 
 # dwb
 rm -r $HOME/.config/dwb
@@ -102,8 +114,8 @@ rm -r $HOME/.config/dunst
 ln -s $DOTPATH/.config/dunst $HOME/.config/dunst
 
 # asound
-rm -r $HOME/.asoundrc
-ln -s $DOTPATH/.asoundrc $HOME
+#rm -r $HOME/.asoundrc
+#ln -s $DOTPATH/.asoundrc $HOME
 
 # moc player
 rm -r $HOME/.moc
