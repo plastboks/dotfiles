@@ -35,7 +35,6 @@ require "globals"
 -- ("$XDG_CONFIG_HOME/luakit/theme.lua" or "/etc/xdg/luakit/theme.lua")
 lousy.theme.init(lousy.util.find_config("theme.lua"))
 theme = assert(lousy.theme.get(), "failed to load theme")
-
 -- Load users window class
 -- ("$XDG_CONFIG_HOME/luakit/window.lua" or "/etc/xdg/luakit/window.lua")
 require "window"
