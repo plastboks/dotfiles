@@ -67,3 +67,14 @@ function webcamtest {
 function runvpn {
   sudo /usr/bin/openvpn --config /etc/openvpn/mullvad_linux.conf --writepid /etc/openvpn/run.pid
 }
+
+#screenshot from terminal
+function screenshot {
+    if [ -z "$1" ]
+    then
+      echo "Please enter filename"
+    else
+      import -window root $1
+    fi
+
+}
