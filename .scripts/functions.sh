@@ -6,7 +6,7 @@
 
 # PDF merge function using ghostscript
 function pdfmerge() {
-  gs "-dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=./$@ $*"
+  gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=$1 ${*:2}
 }
 
 
