@@ -62,3 +62,19 @@ function wifiscan {
 function webcamtest {
   /usr/bin/mplayer tv:// -tv driver=v4l2:width=352:height=288  
 }
+
+#open vpn
+function runvpn {
+  sudo /usr/bin/openvpn --config /etc/openvpn/mullvad_linux.conf --writepid /etc/openvpn/run.pid
+}
+
+#screenshot from terminal
+function screenshot {
+    if [ -z "$1" ]
+    then
+      echo "Please enter filename"
+    else
+      import -window root $1
+    fi
+
+}
