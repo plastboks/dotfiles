@@ -57,7 +57,7 @@ volume master {
 }
 
 run_watch VPN {
-        pidfile = "/var/run/vpnc/pid"
+        pidfile = "/etc/openvpn/run.pid"
 }
 
 time {
