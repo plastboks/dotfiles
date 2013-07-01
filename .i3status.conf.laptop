@@ -7,6 +7,7 @@ general {
 order += "disk /"
 order += "disk /home"
 order += "volume master"
+order += "run_watch VPN"
 order += "run_watch DHCP"
 order += "wireless wlp3s0"
 order += "ethernet eth0"
