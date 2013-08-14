@@ -55,6 +55,10 @@ require "binds"
 -- Optional user script loading --
 ----------------------------------
 
+require "noscript"
+noscript.enable_scripts = false
+noscript.enable_plugins = false
+
 require "webinspector"
 
 -- Add sqlite3 cookiejar
@@ -176,5 +180,6 @@ if unique then
         w.win.urgency_hint = true
     end)
 end
+
 
 -- vim: et:sw=4:ts=8:sts=4:tw=80
