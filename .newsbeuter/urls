@@ -9,3 +9,13 @@ http://penny-arcade.com/feed
 http://feeds.feedburner.com/smbc-comics/PvLb
 http://xkcd.com/rss.xml
 http://hugleikurdagsson.tumblr.com/rss
+# below some youtube feeds
+http://gdata.youtube.com/feeds/api/users/asapSCIENCE/uploads?max-results=30
+http://gdata.youtube.com/feeds/api/users/Vsauce/uploads?max-results=30
+http://gdata.youtube.com/feeds/api/users/Numberphile/uploads?max-results=30
+http://gdata.youtube.com/feeds/api/users/Computerphile/uploads?max-results=30
+http://gdata.youtube.com/feeds/api/users/periodicvideos/uploads?max-results=30
+http://gdata.youtube.com/feeds/api/users/psyfile/uploads?max-results=30
+http://gdata.youtube.com/feeds/api/users/minutephysics/uploads?max-results=30
+http://gdata.youtube.com/feeds/api/users/minuteearth/uploads?max-results=30
+http://gdata.youtube.com/feeds/api/users/wheezywaiter/uploads?max-results=30

@@ -1,6 +1,6 @@
 always-display-description    true
 auto-reload                   yes
-browser                       firefox
+browser                       luakit
 cleanup-on-quit               yes
 download-retries              10
 download-timeout              20
@@ -15,3 +15,4 @@ bind-key k up
 bind-key h left
 bind-key l right 
 bind-key m toggle-show-read-feeds
+
