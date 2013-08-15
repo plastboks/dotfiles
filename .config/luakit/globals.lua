@@ -1,6 +1,7 @@
 -- Global variables for luakit
 globals = {
-    homepage            = "about:blank",
+ -- homepage            = "about:blank",
+    homepage            = "https://github.com/plastboks",
     scroll_step         = 40,
     zoom_step           = 0.1,
     max_cmd_history     = 100,
@@ -53,7 +54,7 @@ soup.accept_policy = cookie_policy.always
 -- it to avoid collisions with lua's string.format characters.
 -- See: http://www.lua.org/manual/5.1/manual.html#pdf-string.format
 search_engines = {
-    duckduckgo  = "https://duckduckgo.com/?q=%s",
+    duckduckgo  = "https://duckduckgo.com/html/?q=%s",
     github      = "https://github.com/search?q=%s",
     google      = "https://google.com/search?q=%s",
     imdb        = "http://www.imdb.com/find?s=all&q=%s",
