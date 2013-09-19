@@ -419,14 +419,24 @@ add_binds("normal", {
         "Enter `passthrough` mode, ignores all luakit keybindings.",
         function (w) w:set_mode("passthrough") end),
     
-    
+    -- Try to view current page or link with quvi and mplayer 
     key({}, "v", function (w) 
         local view = w.view
         local uri = view.hovered_uri or view.uri
         if uri then
             luakit.spawn(string.format("urxvt -e quvi --exec 'mplayer %%u' %q", uri))
-        end 
+        end
     end),
+
+    -- Try to download video on current page or link
+    key({}, "s", function (w) 
+        local view = w.view
+        local uri = view.hovered_uri or view.uri
+        if uri then
+            luakit.spawn(string.format("urxvt -e cclive --output-dir ~/downloads %q", uri))
+        end
+    end),
+
 })
 
 add_binds("insert", {
