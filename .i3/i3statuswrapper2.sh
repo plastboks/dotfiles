@@ -6,7 +6,7 @@ do
     SL=$(xset -q|grep "Scroll Lock"| awk '{ print $12 }')
     TM=$( free -m | grep "Mem" | awk '{print $2}')
     UM=$( free -m | grep "buffers\/cache" | awk '{print $3}')
-    CPUTEMP=$(sensors | grep "Core 0" | awk '{print $3}')
+    CPUTEMP=$(sensors | grep "Physical id" | awk '{print $4}')
     if [ $SL == "on" ]
     then
         dat="[{ \"full_text\": \"SL: $SL\", \"color\":\"#FF8C00\" },"
