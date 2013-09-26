@@ -152,7 +152,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         #status_command i3status | python2 ~/.i3/i3statuswrapper.py
-        status_command /bin/sh ~/.i3/i3statuswrapper2.sh
+        status_command /bin/sh ~/.i3/i3statuswrapper.sh
 }
 
 # lock screen
