@@ -30,20 +30,23 @@ ln -s $DOTPATH/.bash_profile $HOME
 rm -r $HOME/.gnupg
 ln -s $DOTPATH/.gnupg $HOME
 
+# i3
+rm -rf $HOME/.i3
+ln -s $DOTPATH/.i3 $HOME
+
 # i3status
 printf "\n"
 read -p "Laptop (different i3status) [y/N]" -n 1 -r
 if [[ $REPLY =~ [Yy]$ ]]; then
   rm $HOME/.i3status.conf
   ln -s $DOTPATH/.i3status.conf.laptop $HOME/.i3status.conf
+  ln -s $DOTPATH/.i3/config.laptop $DOTPATH/.i3/config
 else 
   rm $HOME/.i3status.conf
   ln -s $DOTPATH/.i3status.conf $HOME
+  ln -s $DOTPATH/.i3/config.main $DOTPATH/.i3/config
 fi
 
-# i3
-rm -rf $HOME/.i3
-ln -s $DOTPATH/.i3 $HOME
 
 # xinitrc
 rm -r $HOME/.xinitrc
