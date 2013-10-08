@@ -1,34 +1,35 @@
 # A basic .muttrc for use with Gmail
 
-source ~/.mutt/sources.muttrc
+source ~/.mutt/sources.muttrc             # source sources...
+source ~/.mutt/accounts/default           # source account
+source ~/.mutt/colors                     # source colors
 
-# editor
-set editor = "vim"
-
-# beep on new mail
-set beep_new
-
-# html mail
-auto_view text/html
-
-# set default account
-source ~/.mutt/accounts/default
+set editor = "vim"                        # Editor
+set beep_new                              # Beep Beep
+set hidden_host                           # Hide host details.
+set print=ask-yes                         # Ask before printing.
+set delete=ask-yes                        # Ask before doing a delete.
+set include                               # Include the message in replies.
+set move=no
+set sort='threads'
+set sort_aux='reverse-last-date-received'
+set auto_tag=yes
+set noallow_8bit                          # 8bit isn't safe via Demon.
+                                          # Attribution line.
+set attribution="* %n <%a> [%{%Y-%m-%d %H:%M:%S %Z}]:\n"
+#set edit_headers                          # I want to edit the message headers.
+set nomark_old                            # Don't mark unread new msgs as old.
+set imap_check_subscribed                 # Subscribe to imap
+set mail_check = 120                      # IMAP check interval
+set timeout = 300
+set imap_keepalive = 300
+set header_cache=~/.mutt-cache/headers
+set message_cachedir=~/.mutt-cache/bodies
+set certificate_file=~/.mutt/certificates
 
 # print command
 set print_command="$HOME/.scripts/print2pdf.sh"
 
-set imap_check_subscribed
-set mail_check = 120
-set timeout = 300
-set imap_keepalive = 300
-set header_cache=~/.mutt/cache/headers
-set message_cachedir=~/.mutt/cache/bodies
-set certificate_file=~/.mutt/certificates
-set move = no
-set include
-set sort = 'threads'
-set sort_aux = 'reverse-last-date-received'
-set auto_tag = yes
 ignore "Authentication-Results:"
 ignore "DomainKey-Signature:"
 ignore "DKIM-Signature:"
@@ -40,42 +41,9 @@ bind editor ^T complete
 bind editor <space> noop 
 
 # Gmail-style keyboard shortcuts
-macro index,pager gy "<enter-command>unset trash\n <exit><delete-message>" "Gmail archive message"
-macro index,pager gd "<enter-command>set trash=\"imaps://imap.googlemail.com/[GMail]/Bin\"\n <exit><delete-message>" "Gmail delete message"
-macro index,pager zi "<change-folder>=INBOX<enter>" "Go to inbox"
+# macro index,pager gy "<enter-command>unset trash\n <exit><delete-message>" "Gmail archive message"
+# macro index,pager gd "<enter-command>set trash=\"imaps://imap.googlemail.com/[GMail]/Bin\"\n <exit><delete-message>" "Gmail delete message"
+# macro index,pager zi "<change-folder>=INBOX<enter>" "Go to inbox"
 
-# Colors Managing Mail
-color normal white black
-color bold brightwhite black
-color markers magenta black
-color status black cyan
-color indicator brightgreen blue
-color tree green black
-color error brightred black
-
-# Colors for items in the index
-color index cyan black ~N
-color index blue black ~D
-color index magenta black ~T
-
-# Default Colors Reader
-color hdrdefault green black
-color message white black
-color quoted cyan black
-color signature green black
-color attachment yellow black
-color search brightwhite black
-color tilde cyan black
-
-# Aditional Colors Header
-color header brightwhite black "^(From|Subject):"
-color header blue black "^X-Spammer:"
-
-# URL and adresses
-color body brightblue black "(http|https|ftp|telnet|finger)://[^ \">\t\r\n]*"
-color body cyan black "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
-color body cyan black "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
-
-# Various smilies and the like
-color body black yellow "[;:]-*[)>(<lt;|]"       # :-) etc...
-color body black yellow "\\*[A-Za-z]+\\*"      # *Bold* text.
+# Last, but not least, get mutt to display its version on startup.
+push <show-version>

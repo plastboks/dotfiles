@@ -61,8 +61,9 @@ rm -r $HOME/.vimrc
 ln -s $DOTPATH/.vimrc $HOME
 
 # mutt
-rm -r $HOME/.mutt
-ln -s $DOTPATH/.mutt $HOME
+# leave out the mutt homedir for now.
+#rm -r $HOME/.mutt
+#ln -s $DOTPATH/.mutt $HOME
 rm -r $HOME/.muttrc
 ln -s $DOTPATH/.muttrc $HOME
 rm -r $HOME/.mailcap

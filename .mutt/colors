@@ -1,0 +1,35 @@
+# Colors Managing Mail
+color normal white black
+color bold brightwhite black
+color markers magenta black
+color status black cyan
+color indicator brightgreen blue
+color tree green black
+color error brightred black
+
+# Colors for items in the index
+color index cyan black ~N
+color index blue black ~D
+color index magenta black ~T
+
+# Default Colors Reader
+color hdrdefault green black
+color message white black
+color quoted cyan black
+color signature green black
+color attachment yellow black
+color search brightwhite black
+color tilde cyan black
+
+# Aditional Colors Header
+color header brightwhite black "^(From|Subject):"
+color header blue black "^X-Spammer:"
+
+# URL and adresses
+color body brightblue black "(http|https|ftp|telnet|finger)://[^ \">\t\r\n]*"
+color body cyan black "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
+color body cyan black "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
+
+# Various smilies and the like
+color body black yellow "[;:]-*[)>(<lt;|]"       # :-) etc...
+color body black yellow "\\*[A-Za-z]+\\*"      # *Bold* text.
