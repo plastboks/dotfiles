@@ -425,8 +425,7 @@ add_binds("normal", {
         local uri = view.hovered_uri or view.uri
         if uri then
             -- luakit.spawn(string.format("urxvt -e quvi --exec 'mplayer %%u' %q", uri))
-            luakit.spawn(string.format("urxvt -e %q/.scripts/quvimplayer.sh %q",
-            os.getenv('HOME'), uri))
+            luakit.spawn(string.format("urxvt -e %q/.scripts/webmplayer.sh %q", os.getenv('HOME'), uri))
         end
     end),
 
@@ -435,7 +434,7 @@ add_binds("normal", {
         local view = w.view
         local uri = view.hovered_uri or view.uri
         if uri then
-            luakit.spawn(string.format("urxvt -e cclive --output-dir ~/downloads %q", uri))
+            luakit.spawn(string.format("urxvt -e cclive --output-dir %q/downloads %q", os.getenv('HOME'), uri))
         end
     end),
 
