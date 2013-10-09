@@ -1,10 +1,10 @@
 # A basic .muttrc for use with Gmail
 
-source ~/.mutt/sources.muttrc             # source sources...
-source ~/.mutt/accounts/default           # source account
+source ~/.mutt/work.muttrc                # source sources...
 source ~/.mutt/colors                     # source colors
 
 set editor = "vim"                        # Editor
+set text_flowed=yes
 set beep_new                              # Beep Beep
 set hidden_host                           # Hide host details.
 set print=ask-yes                         # Ask before printing.
