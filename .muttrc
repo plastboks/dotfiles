@@ -28,9 +28,6 @@ set header_cache=~/.mutt-cache/headers
 set message_cachedir=~/.mutt-cache/bodies
 set certificate_file=~/.mutt/certificates
 
-# PGP settings
-set pgp_autosign=yes
-
 # print command
 set print_command="$HOME/.scripts/print2pdf.sh"
 
