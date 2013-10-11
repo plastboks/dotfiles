@@ -15,6 +15,10 @@ function sshrfs() {
   sshfs -o workaround=rename -o cache=yes -o uid=$(id -u) -o gid=$(id -g) $1: $2
 }
 
+# No ugly whitespaces
+function noUglyWhitespace {
+  for f in $1; do mv "$f" `echo $f | tr ' ' '_'`; done
+}
 
 # This is for now redundant, but will keep it for now...
 function sshAddAll() {
