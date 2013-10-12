@@ -419,13 +419,21 @@ add_binds("normal", {
         "Enter `passthrough` mode, ignores all luakit keybindings.",
         function (w) w:set_mode("passthrough") end),
     
-    -- Try to view current page or link with quvi and mplayer 
+    -- Try to view current page or link with quvi and mplayer with medium qual
     key({}, "v", function (w) 
         local view = w.view
         local uri = view.hovered_uri or view.uri
         if uri then
-            -- luakit.spawn(string.format("urxvt -e quvi --exec 'mplayer %%u' %q", uri))
-            luakit.spawn(string.format("urxvt -e %q/.scripts/webmplayer.sh %q", os.getenv('HOME'), uri))
+            luakit.spawn(string.format("urxvt -e %q/.scripts/webmplayer.sh medium %q", os.getenv('HOME'), uri))
+        end
+    end),
+
+    -- Try to view current page or link with quvi and mplayer with good quality
+    key({}, "V", function (w) 
+        local view = w.view
+        local uri = view.hovered_uri or view.uri
+        if uri then
+            luakit.spawn(string.format("urxvt -e %q/.scripts/webmplayer.sh good %q", os.getenv('HOME'), uri))
         end
     end),
 
@@ -434,7 +442,11 @@ add_binds("normal", {
         local view = w.view
         local uri = view.hovered_uri or view.uri
         if uri then
-            luakit.spawn(string.format("urxvt -e cclive --output-dir %q/downloads %q", os.getenv('HOME'), uri))
+            if uri:match('tv.nrk.no') then
+                luakit.spawn(string.format("urxvt -e python2 %q/.scripts/nrkfetch.py %q", os.getenv('HOME'), uri))
+            else
+                luakit.spawn(string.format("urxvt -e cclive --output-dir %q/downloads %q", os.getenv('HOME'), uri))
+            end
         end
     end),
 

@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/python
+#
+# example usage: `python2 nrkfetch.py URL`
+# 
 
 from urllib import urlopen
 from bs4 import BeautifulSoup as BSoup
@@ -17,7 +20,7 @@ def getVideoID(url):
     
 def getFeedData(vid):
     url = "http://nrk.no/serum/api/video/%s" % vid
-    soup = BSoup(urlopen(url))
+    soup = BSoup(urlopen(url), 'lxml')
     return json.loads(soup.p.string)['mediaURL']
 
 def makeFileName(url):
@@ -45,7 +48,9 @@ def main(argv):
     vID = getVideoID(argv[1])
     feedURL = tumbleURL(getFeedData(vID), 3)
     fileName = makeFileName(argv[1])
-    process = subprocess.Popen("vlc %s --sout=file/ts:%s" % (feedURL, fileName),
+    process = subprocess.Popen("vlc %s --sout=file/ts:%s/downloads/%s" % (feedURL,
+                                                                          os.path.expanduser('~'),
+                                                                          fileName),
                                shell=True,
                                stdout=subprocess.PIPE)
     process.wait()
