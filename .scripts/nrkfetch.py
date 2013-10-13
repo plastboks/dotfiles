@@ -46,7 +46,7 @@ def main(argv):
     feedURL = tumbleURL(getFeedData(vID), 3)
     fileBaseName = getSeriesName(argv[1])
     fileSubName = raw_input('Filename subfix: ')
-    fileName = fileBaseName+"-"+fileSubName
+    fileName = fileBaseName+"-"+fileSubName+".mpg"
     print("Saving to %s\n" % fileName)
     process = subprocess.Popen("vlc %s --sout=file/ts:%s/downloads/%s" % (feedURL,
                                                                           os.path.expanduser('~'),
