@@ -23,10 +23,6 @@ def getFeedData(vid):
     soup = BSoup(urlopen(url), 'lxml')
     return json.loads(soup.p.string)['mediaURL']
 
-def getSeriesName(url):
-    url = url.split('/')
-    return url[4]
-
 def tumbleURL(url, bitrate):
     url = url.replace('/z/', '/i/', 1)
     url = url.rsplit('/', 1)[0]
@@ -36,7 +32,7 @@ def tumbleURL(url, bitrate):
 def usage(argv):
     cmd = os.path.basename(argv[0])
     print('usage: %s <url>\n'
-          '(example: "%s http://tv.nrk.no/")' % (cmd, cmd))
+          '(example: "%s http://tv.nrk.no/...")' % (cmd, cmd))
     sys.exit(1)
 
 def main(argv):
@@ -44,13 +40,7 @@ def main(argv):
         usage(argv)
     vID = getVideoID(argv[1])
     feedURL = tumbleURL(getFeedData(vID), 3)
-    fileBaseName = getSeriesName(argv[1])
-    fileSubName = raw_input('Filename subfix: ')
-    fileName = fileBaseName+"-"+fileSubName
-    print("Saving to %s\n" % fileName)
-    process = subprocess.Popen("vlc %s --sout=file/ts:%s/downloads/%s" % (feedURL,
-                                                                          os.path.expanduser('~'),
-                                                                          fileName),
+    process = subprocess.Popen("mplayer %s" % (feedURL),
                                shell=True,
                                stdout=subprocess.PIPE)
     process.wait()

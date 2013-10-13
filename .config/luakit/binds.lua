@@ -424,7 +424,11 @@ add_binds("normal", {
         local view = w.view
         local uri = view.hovered_uri or view.uri
         if uri then
-            luakit.spawn(string.format("urxvt -e %q/.scripts/webmplayer.sh medium %q", os.getenv('HOME'), uri))
+            if uri:match('tv.nrk.no') then
+                luakit.spawn(string.format("urxvt -e python2 %q/.scripts/nrkview.py %q", os.getenv('HOME'), uri))
+            else
+                luakit.spawn(string.format("urxvt -e %q/.scripts/webmplayer.sh medium %q", os.getenv('HOME'), uri))
+            end
         end
     end),
 
