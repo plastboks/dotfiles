@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/python
+#
+# example usage: `python2 nrkfetch.py URL`
+# 
 
 from urllib import urlopen
 from bs4 import BeautifulSoup as BSoup
@@ -17,15 +20,12 @@ def getVideoID(url):
     
 def getFeedData(vid):
     url = "http://nrk.no/serum/api/video/%s" % vid
-    soup = BSoup(urlopen(url))
+    soup = BSoup(urlopen(url), 'lxml')
     return json.loads(soup.p.string)['mediaURL']
 
-def makeFileName(url):
+def getSeriesName(url):
     url = url.split('/')
-    string = "%s-s%02de%02d.mpg" % (url[4],
-                                int(url[6].split('-')[1]),
-                                int(url[7].split('-')[1]))
-    return string
+    return url[4]
 
 def tumbleURL(url, bitrate):
     url = url.replace('/z/', '/i/', 1)
@@ -44,8 +44,13 @@ def main(argv):
         usage(argv)
     vID = getVideoID(argv[1])
     feedURL = tumbleURL(getFeedData(vID), 3)
-    fileName = makeFileName(argv[1])
-    process = subprocess.Popen("vlc %s --sout=file/ts:%s" % (feedURL, fileName),
+    fileBaseName = getSeriesName(argv[1])
+    fileSubName = raw_input('Filename subfix: ')
+    fileName = fileBaseName+"-"+fileSubName+".mpg"
+    print("Saving to %s\n" % fileName)
+    process = subprocess.Popen("vlc %s --sout=file/ts:%s/downloads/%s" % (feedURL,
+                                                                          os.path.expanduser('~'),
+                                                                          fileName),
                                shell=True,
                                stdout=subprocess.PIPE)
     process.wait()
