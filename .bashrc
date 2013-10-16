@@ -8,7 +8,11 @@ export EDITOR='vim'
 [[ $- != *i* ]] && return
 
 
-PS1="[\[\033[36m\]\u@\\h \\W\[\033[m\]]\$ "
+if [ ! -n "$SSH_TTY" ]; then
+  PS1="[\[\033[36m\]\u@\\h \\W\[\033[m\]]\$ "
+else
+  PS1="SSH-[\[\033[36m\]\u@\\h \\W\[\033[m\]]\$ "
+fi
 
 
 source ~/.scripts/functions.sh
