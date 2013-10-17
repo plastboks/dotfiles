@@ -19,6 +19,7 @@ local history = require("history")
 module("plugins.nscript_widget")
 
 -- Strings widget uses
+local cookie_str = { enabled = "c", disabled = "!c" }
 local script_str = { enabled = "s", disabled = "!s" }
 local plugin_str = { enabled = "p", disabled = "!p" }
 
@@ -53,11 +54,14 @@ end
 -- Method wrapper
 window.methods.update_noscr = function(w)
   if not w.view then return end
+    local cookies = w.view.enable_cookies
     local scripts = w.view.enable_scripts
     local plugins = w.view.enable_plugins
     local noscr = w.sbar.r.noscr
-    local tmpl = '<span foreground="%s">%s</span> <span foreground="%s">%s</span>'
+    local tmpl = '<span foreground="%s">%s</span> <span foreground="%s">%s</span> <span foreground="%s">%s</span>'
     noscr.text = string.format(tmpl, 
+    ( cookies and theme.nsw_enabled ) or theme.nsw_disabled,
+    ( cookies and cookie_str.enabled ) or cookie_str.disabled,
     ( scripts and theme.nsw_enabled ) or theme.nsw_disabled,
     ( scripts and script_str.enabled ) or script_str.disabled,
     ( plugins and theme.nsw_enabled ) or theme.nsw_disabled,
