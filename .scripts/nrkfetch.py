@@ -16,7 +16,9 @@ import subprocess
 
 def getVideoID(url):
     url = url.split('/')  
-    return url[5]
+    if url[3] == 'serie':
+      return url[5]
+    return url[4]
     
 def getFeedData(vid):
     url = "http://nrk.no/serum/api/video/%s" % vid
