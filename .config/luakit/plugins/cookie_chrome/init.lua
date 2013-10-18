@@ -29,10 +29,25 @@ local capi = {
 
 module("plugins.show_cookies.chrome")
 
--- Display the cookie uri and title.
+-- Display the cookie.
 show_uri = false
 
 stylesheet = [===[
+
+#page-header {
+    height: 60px;
+}
+
+#page-header h1 {
+    color: #4f4f4f;
+    padding-left: 10px;
+}
+
+#page-header #search-box,
+#page-header input {
+    display: none;
+}
+
 .cookie {
     line-height: 1.6em;
     padding: 0.4em 0.5em;
@@ -53,6 +68,15 @@ stylesheet = [===[
     white-space: nowrap;
 }
 
+.cookie .host .secure {
+    font-size: 0.8em;
+    color: green;
+}
+
+.cookie .host .insecure {
+    color: red;
+}
+
 .cookie .top {
     position: relative;
 }
@@ -65,14 +89,6 @@ stylesheet = [===[
 
 .cookie .data .name {
     padding-right: 20px;
-}
-
-.cookie .uri, .cookie .desc {
-    display: none;
-}
-
-.cookie .uri {
-    color: #aaa;
 }
 
 .cookie .bottom {
@@ -89,31 +105,11 @@ stylesheet = [===[
     cursor: pointer;
 }
 
-.cookie .desc {
-    color: #222;
-    border-left: 0.3em solid #ddd;
-    margin: 0 0 0.2em 0.5em;
-    padding: 0 0 0 0.5em;
-    max-width: 60em;
-}
-
-.cookie .desc > * {
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
-}
-
-.cookie .desc > :first-child {
-    margin-top: 0;
-}
-
-.cookie .desc > :last-child {
-    margin-bottom: 0;
-}
-
 .cookie .controls a {
     color: #888;
     padding: 0.1em 0.4em;
     margin: 0 0;
+    display: none;
 }
 
 .cookie .controls a:hover {
@@ -214,6 +210,7 @@ local html = [==[
 </head>
 <body>
     <header id="page-header">
+        <h1>Cookies</h1>
         <span id="search-box">
             <input type="text" id="search" placeholder="Search cookies..." />
             <input type="button" id="clear-button" value="X" />
@@ -228,9 +225,9 @@ local html = [==[
         <div id="edit-dialog">
             <table>
                 <tr><td>Host:</td> <td><input class="host" type="text" /></td> </tr>
-                <tr><td>URI:</td>   <td><input class="uri"   type="text" /></td> </tr>
-                <tr><td>Tags:</td>  <td><input class="tags"  type="text" /></td> </tr>
-                <tr><td>Info:</td>  <td><textarea class="desc"></textarea></td>  </tr>
+                <tr><td>Name:</td>   <td><input class="name"   type="text" /></td> </tr>
+                <tr><td>Value:</td>  <td><input class="value"  type="text" /></td> </tr>
+                <tr><td>Path:</td>  <td><textarea class="path"></textarea></td>  </tr>
                 <tr>
                     <td></td>
                     <td>
@@ -245,12 +242,15 @@ local html = [==[
     <div id="templates" class="hidden">
         <div id="cookie-skelly">
             <div class="cookie">
-                <div class="host"></div>
+                <div class="host">
+                  <span class="secure"></span>
+                  <span class="hostname"></span>
+                  <span class="path"></span>
+                </div>
                 <div class="data">
                   <span class="name"></span>
                   <span class="value"></span>
                 </div>
-                <div class="desc"></div>
                 <div class="bottom">
                     <span class="date"></span>
                     <span class="controls">
@@ -276,7 +276,14 @@ $(document).ready(function () { 'use strict'
 
         $b.attr("cookie_id", b.id);
         $b.find(".name").text(b.name);
-        $b.find(".host").text(b.host);
+        if (b.isSecure) {
+          $b.find(".host .secure").text('Secure');
+        } else {
+          $b.find(".host .secure").text('Insecure');
+          $b.find(".host .secure").addClass('insecure');
+        }
+        $b.find(".host .hostname").text(b.host);
+        $b.find(".host .path").text(b.path);
         $b.find(".value").text(b.value);
         $b.find(".date").text(b.date);
 
@@ -287,11 +294,7 @@ $(document).ready(function () { 'use strict'
         b = b || {};
         var $e = $edit_dialog;
         $e.attr("cookie_id", b.id);
-        $e.attr("created", b.created);
         $e.find(".host").val(b.host);
-        $e.find(".uri").val(b.uri);
-        $e.find(".tags").val(b.tags);
-        $e.find(".desc").val(b.desc);
         $edit_view.fadeIn("fast", function () {
             $edit_dialog.find(".host").focus();
         });
@@ -439,8 +442,7 @@ export_funcs = {
         sql = table.concat(sql, " ")
 
         if #where ~= 0 then
-            local wrap = [[SELECT *
-                FROM (%s)]]
+            local wrap = [[SELECT * FROM (%s)]]
             sql = string.format(wrap, sql)
         end
 
@@ -448,7 +450,7 @@ export_funcs = {
 
         local date = os.date
         for _, row in ipairs(rows) do
-            row.date = date("%Y-%m-%d", row.expiry)
+            row.date = date("%Y-%m-%d %H:%M", row.expiry)
             local desc = row.desc
             if desc and string.find(desc, "%S") then
                 row.markdown_desc = markdown(desc)
