@@ -109,7 +109,7 @@ stylesheet = [===[
     color: #888;
     padding: 0.1em 0.4em;
     margin: 0 0;
-    display: none;
+    //display: none;
 }
 
 .cookie .controls a:hover {
