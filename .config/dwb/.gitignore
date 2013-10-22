@@ -1,4 +1,6 @@
-*
+/*
 !.gitignore
 !keys
 !settings
+!searchengines
+!userscripts/
