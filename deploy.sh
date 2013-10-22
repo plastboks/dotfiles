@@ -101,6 +101,10 @@ ln -s $DOTPATH/.config/uzbl $HOME/.config/uzbl
 rm -r $HOME/.config/dwb
 ln -s $DOTPATH/.config/dwb $HOME/.config/dwb
 
+# fontconfig
+rm -r $HOME/.config/fontconfig
+ln -s $DOTPATH/.config/fontconfig $HOME/.config/fontconfig
+
 # pcmanfm
 rm -r $HOME/.config/pcmanfm
 ln -s $DOTPATH/.config/pcmanfm $HOME/.config/pcmanfm
