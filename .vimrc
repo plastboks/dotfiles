@@ -6,10 +6,10 @@ call pathogen#helptags()
 set wrap
 
 " Tabs are 4 characters
-set tabstop=2
+set tabstop=4
 
 " (Auto)indent uses 4 characters
-set shiftwidth=2
+set shiftwidth=4
 
 " spaces instead of tabs
 set expandtab
