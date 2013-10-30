@@ -11,7 +11,7 @@ export EDITOR='vim'
 if [ ! -n "$SSH_TTY" ]; then
   PS1="[\[\033[36m\]\u@\\h \\W\[\033[m\]]\$ "
 else
-  PS1="SSH-[\[\033[36m\]\u@\\h \\W\[\033[m\]]\$ "
+  PS1="SSH-[\[\033[0;31m\]\u@\\h \\W\[\033[m\]]\$ "
 fi
 
 
