@@ -33,9 +33,11 @@ function gar {
 }
 
 
-# gpg-agent
-if [ ! -f ~/.gpg-agent-info ]; then
-  gac
-else
-  gar
+# gpg-agent (only for local users)
+if [ ! -n "$SSH_TTY" ]; then
+    if [ ! -f ~/.gpg-agent-info ]; then
+      gac
+    else
+      gar
+    fi
 fi
