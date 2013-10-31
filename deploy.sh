@@ -105,6 +105,10 @@ ln -s $DOTPATH/.config/dwb $HOME/.config/dwb
 rm -r $HOME/.config/fontconfig
 ln -s $DOTPATH/.config/fontconfig $HOME/.config/fontconfig
 
+# fonts
+rm -r $HOME/.fonts
+ln -s $DOTPATH/.fonts $HOME/.fonts
+
 # pcmanfm
 rm -r $HOME/.config/pcmanfm
 ln -s $DOTPATH/.config/pcmanfm $HOME/.config/pcmanfm

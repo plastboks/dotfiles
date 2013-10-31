@@ -30,7 +30,7 @@ URxvt*background:0
 
 !# fonts
 ! run "fc-list" for a list of available fonts
-URxvt*font: xft:LiberationMono-Regular:pixelsize=12
+URxvt*font: xft:LiberationMono for powerline:pixelsize=12
 
 !# generic
 URxvt*scrollBar: False
