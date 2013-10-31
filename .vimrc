@@ -1,7 +1,6 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-
 " Wrap too long lines
 set wrap
 
@@ -97,6 +96,8 @@ set completeopt=menuone,longest
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 
+" number color
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
@@ -157,7 +158,6 @@ augroup END
 """ TESTAREA
 set more                                    " ---more--- like less
 set scrolloff=5                             " lines above/below cursor
-set showcmd                                 " show cmds being typed
 set title                                   " window title
 
 if &term =~ "xterm\\|rxvt"
@@ -194,3 +194,14 @@ let g:phpqa_codesniffer_autorun = 0
 
 " Show code coverage on load (default = 0)
 let g:phpqa_codecoverage_autorun = 1
+
+" GitGutter
+let g:gitgutter_enabled = 1
+let g:gitgutter_highlight_lines = 1
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+highlight GitGutterAddLine ctermfg=NONE ctermbg=235 cterm=NONE
+highlight GitGutterChangeLine ctermfg=NONE ctermbg=235 cterm=NONE
+highlight GitGutterDeleteLine ctermfg=NONE ctermbg=234 cterm=NONE
+highlight GitGutterChangeDeleteLine ctermfg=NONE ctermbg=235 cterm=NONE
+highlight clear SignColumn
