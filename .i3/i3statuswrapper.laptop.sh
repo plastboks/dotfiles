@@ -12,18 +12,18 @@ do
     CPUGOV=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
     CPUSPEED=$(grep "cpu MHz" /proc/cpuinfo | awk '{sum+=$4} END {printf "%04d", sum/NR}')
     
-    MEM="[{ \"full_text\": \"M: $UM\/$TM(MB)\", \"color\":\"#00FFFF\" },"
-    CPUS="{ \"full_text\": \"C.S: $CPUSPEED MHz\", \"color\":\"#666666\" },"
-    CPUG="{ \"full_text\": \"C.G: $CPUGOV\", \"color\":\"#7FFFG4\" },"
-    CT="{ \"full_text\": \"C.T: $CPUTEMP\", \"color\":\"#FFFF00\" },"
-    KERNEL="{ \"full_text\": \"$KER\", \"color\":\"#4D4DDC\" },"
-    CDISK="{ \"full_text\": \"Dsk: $CONDISK\", \"color\":\"#D2691E\" },"
+    MEM="[{ \"full_text\": \"M: $UM\/$TM(MB)\", \"color\":\"#335C85\" },"
+    CPUS="{ \"full_text\": \"C.S: $CPUSPEED MHz\", \"color\":\"#194775\" },"
+    CPUG="{ \"full_text\": \"C.G: $CPUGOV\", \"color\":\"#335C85\" },"
+    CT="{ \"full_text\": \"C.T: $CPUTEMP\", \"color\":\"#194775\" },"
+    KERNEL="{ \"full_text\": \"$KER\", \"color\":\"#335C85\" },"
+    CDISK="{ \"full_text\": \"Dsk: $CONDISK\", \"color\":\"#194775\" },"
 
     if [ $SL == "on" ]
     then
-        SRL="{ \"full_text\": \"SL: $SL\", \"color\":\"#FF8C00\" },"
+        SRL="{ \"full_text\": \"SL: $SL\", \"color\":\"#B2248F\" },"
     else
-        SRL="{ \"full_text\": \"SL: $SL\", \"color\":\"#FF00FF\" },"
+        SRL="{ \"full_text\": \"SL: $SL\", \"color\":\"#335C85\" },"
     fi
 
 

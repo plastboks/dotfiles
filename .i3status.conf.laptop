@@ -4,13 +4,13 @@ general {
         interval = 1
 }
 
-order += "disk /"
-order += "disk /home"
 #order += "volume master"
 order += "run_watch VPN"
 order += "run_watch DHCP"
 order += "wireless wls1"
-order += "ethernet eth0"
+#order += "ethernet eth0"
+order += "disk /"
+order += "disk /home"
 order += "battery 0"
 order += "battery 1"
 order += "load"
@@ -19,6 +19,8 @@ order += "time"
 wireless wls1 {
         format_up = "W: (%quality @ %essid) %ip"
         format_down = "W: down"
+        color_bad = "#991F7A"
+        color_good = "#194775"
 }
 
 ethernet eth0 {
@@ -47,6 +49,8 @@ battery 1 {
 
 run_watch DHCP {
         pidfile = "/var/run/dhclient*.pid"
+        color_bad = "#B2248F"
+        color_good = "#335C85"
 }
 
 volume master {
@@ -58,6 +62,8 @@ volume master {
 
 run_watch VPN {
         pidfile = "/etc/openvpn/run.pid"
+        color_good = "#B2248F"
+        color_bad = "#335C85"
 }
 
 time {
