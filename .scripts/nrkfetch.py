@@ -23,7 +23,7 @@ def getVideoID(url):
 def getFeedData(vid):
     url = "http://nrk.no/serum/api/video/%s" % vid
     soup = BSoup(urlopen(url), 'lxml')
-    return json.loads(soup.p.string)['mediaURL']
+    return json.loads(soup.p.string)['mediaUrl']
 
 def getSeriesName(url):
     url = url.split('/')
