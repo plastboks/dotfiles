@@ -82,3 +82,15 @@ function screenshot {
     fi
 
 }
+
+# tail follow with color highlight
+#
+# usage: 
+# tailfc file foo # highlight foo
+# tailfc file "(foo|bar)" # highlight the strings foo and bar
+# tailfc file "\b((foo|bar)\b" # highlight the words foo and bar
+# tailfc file ".*\b((foo|bar)\b.*" highlight the whole line that contains the words foo or bar
+# 
+function tailfc {
+    tail -f $1 | perl -pe "s/$2/\e[1;31;43m$&\e[0m/g"
+}
