@@ -43,7 +43,7 @@ URxvt*saveLines: 100000
 
 !########## solarized theme ##############
 
-URxvt*background: #002b36
+!#URxvt*background: #002b36
 !#URxvt*foreground: #657b83
 URxvt*foreground: #92a9b1
 
