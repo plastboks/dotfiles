@@ -1,7 +1,8 @@
 # A basic .muttrc for use with Gmail
 
 source ~/.mutt/work.muttrc                # source sources...
-source ~/.mutt/colors                     # source colors
+#source ~/.mutt/colors                     # source colors
+source ~/.mutt/mutt-colors-solarized-dark-256.muttrc # source colors
 source ~/.mutt/gpg.rc                     # GPG
 
 set editor = "vim"                        # Editor
