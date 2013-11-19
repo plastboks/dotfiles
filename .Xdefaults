@@ -44,7 +44,7 @@ URxvt*saveLines: 100000
 !########## solarized theme ##############
 
 URxvt*background:0
-URxvt*foreground:#657b83
+URxvt*foreground:#C3C3C3
 
 URxvt*fading:0
 URxvt*fadeColor: #CFCFCF
@@ -53,9 +53,11 @@ URxvt*pointerColorBackground: #586e75
 URxvt*pointerColorForeground: #93a1a1
 
 !! black dark/light
-!# URxvt*color0: #073642
+!# URxvt*color0: #073642 
 !# URxvt*color0: #1F1F1F
-URxvt*color0: #021216
+!# URxvt*color0: #021216
+!# URxvt*color0: #002b36
+URxvt*color0: #1C1C1C
 URxvt*color8: #002b36
 
 !! red dark/light
