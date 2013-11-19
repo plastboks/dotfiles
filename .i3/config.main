@@ -13,12 +13,12 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-# font pango:DejaVu Sans Mono 10
+font pango:LiberationMono Sans Mono 8
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -163,10 +163,14 @@ bindsym $mod+ctrl+l exec xautolock -locknow
 # start windows without borders by default
 new_window 1pixel
 
-# background colod
-client.background #1F1F1F
+# background color
+client.background #1C1C1C
+# class                 border  backgr. text    indicator
+client.focused          #606060 #4e4e4e #ffffff #657b83
+client.focused_inactive #333333 #313131 #ffffff #484e50
+client.unfocused        #333333 #222222 #888888 #292d2e
+client.urgent           #2f343a #900000 #ffffff #900000
+
 
 # float force some applications
-#for_window [class="keepassx"] floating enable
 for_window [class="MPlayer"] floating enable
-
