@@ -5,7 +5,7 @@ function screenshot() {
     var wv = tabs.current;
     var d = new Date();
     var n = d.getTime();
-    var filename = system.getEnv("HOME") + "/" + wv.title.replace(/\s/g, "_") + "_" + n + ".png"; 
+    var filename = system.getEnv("HOME") + "/downloads/" + wv.title.replace(/\s/g, "_") + "_" + n + ".png"; 
     var result = wv.toPng(filename);
     if (result < 0)
         io.error("Taking screenshot failed.");
