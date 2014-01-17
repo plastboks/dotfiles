@@ -153,6 +153,12 @@ bindsym $mod+r mode "resize"
 bar {
         #status_command i3status | python2 ~/.i3/i3statuswrapper.py
         status_command /bin/sh ~/.i3/i3statuswrapper.sh
+        colors {
+            statusline #194775
+            background #181818
+            focused_workspace #194475 #335C85 #ABABAB
+            inactive_workspace #1F1F1F #333333 #C3C3C3
+        }
 }
 
 # lock screen
