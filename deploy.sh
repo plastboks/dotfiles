@@ -34,6 +34,10 @@ ln -s $DOTPATH/.gnupg $HOME
 rm -rf $HOME/.i3
 ln -s $DOTPATH/.i3 $HOME
 
+# xmonad
+rm -rf $HOME/.xmonad
+ln -s $DOTPATH/.xmonad $HOME
+
 # i3status
 printf "\n"
 read -p "Laptop (different i3status) [y/N]" -n 1 -r
