@@ -38,5 +38,5 @@ if [ ! -n "$SSH_TTY" ]; then
 fi
 
 # tmux / color terms
-export TERM=xterm-256color
-[ -n "$TMUX" ] && export TERM="screen-256color"
+#export TERM=xterm-256color
+#[ -n "$TMUX" ] && export TERM="screen-256color"
