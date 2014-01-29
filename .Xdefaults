@@ -1,37 +1,11 @@
-!# -- Some rxvt definitions -- #
-
-!# colors
-!# URxvt.color0  : #1F1F1F1F1F1F
-!# URxvt.color8  : #555557575353
-! red
-!# URxvt.color1  : #CCCC00000000
-!# URxvt.color9  : #EFEF29292929
-! green
-!# URxvt.color2  : #4E4E9A9A0606
-!# URxvt.color10 : #8A8AE2E23434
-! yellow
-!# URxvt.color3  : #C4C4A0A00000
-!# URxvt.color11 : #FCFCE9E94F4F
-! blue
-!# URxvt.color4  : #34346565A4A4
-!# URxvt.color12 : #72729F9FCFCF
-! magenta
-!# URxvt.color5  : #757550507B7B
-!# URxvt.color13 : #ADAD7F7FA8A8
-! cyan
-!# URxvt.color6  : #060698209A9A
-!# URxvt.color14 : #3434E2E2E2E2
-! white
-!# URxvt.color7  : #D3D3D7D7CFCF
-!# URxvt.color15 : #EEEEEEEEECEC
-
-!# URxvt*foreground:White
-!# URxvt*background: 0
+!################################
+!# -- Some URxvt definitions -- #
+!################################
 
 !# fonts
 ! run "fc-list" for a list of available fonts
 URxvt*font: xft:LiberationMono for powerline:pixelsize=12
-URxvt.intensityStyles: false
+URxvt*intensityStyles: false
 
 !# generic
 URxvt*scrollBar: False
@@ -90,12 +64,87 @@ URxvt*color15: #fdf6e3
 
 !########## end solarized ##############
 
-URxvt.perl-lib        : /usr/lib/urxvt/perl/
-URxvt.perl-ext-common : default,matcher
-URxvt.urlLauncher     : /usr/bin/firefox
-URxvt.matcher.button  : 1
-URxvt.tabbed.tabbar-fg: 5
-URxvt.tabbed.tabbar-bg: 0
-URxvt.tabbed.tab-fg:    14
-URxvt.tabbed.tab-bg:    0
+URxvt*perl-lib        : /usr/lib/urxvt/perl/
+URxvt*perl-ext-common : default,matcher
+URxvt*urlLauncher     : /usr/bin/firefox
+URxvt*matcher.button  : 1
+URxvt*tabbed.tabbar-fg: 5
+URxvt*tabbed.tabbar-bg: 0
+URxvt*tabbed.tab-fg:    14
+URxvt*tabbed.tab-bg:    0
 URxvt*keysym.F11:   perl:fullscreen:switch
+
+
+!################################
+!# -- Some XTERM definitions -- #
+!################################
+
+!# fonts
+! run "fc-list" for a list of available fonts
+
+!# generic
+XTerm*scrollBar: False
+XTerm*scrollTtyOutput: False
+XTerm*urgentOnBell: True
+XTerm*scrollTtyKeypress: True
+XTerm*secondaryScroll: True
+XTerm*saveLines: 100000
+
+!########## solarized theme ##############
+
+XTerm*bg:0
+XTerm*fg:#C3C3C3
+
+XTerm*fading:0
+XTerm*fadeColor: #CFCFCF
+XTerm*cursorColor: #93a1a1
+XTerm*pointerColorBackground: #586e75
+XTerm*pointerColorForeground: #93a1a1
+
+!! black dark/light
+!# XTerm*color0: #073642 
+!# XTerm*color0: #1F1F1F
+!# XTerm*color0: #021216
+!# XTerm*color0: #002b36
+XTerm*color0: #1C1C1C
+XTerm*color8: #002b36
+
+!! red dark/light
+XTerm*color1: #dc322f
+XTerm*color9: #cb4b16
+
+!! green dark/light
+XTerm*color2: #859900
+XTerm*color10: #586e75
+
+!! yellow dark/light
+XTerm*color3: #b58900
+XTerm*color11: #657b83
+
+!! blue dark/light
+XTerm*color4: #268bd2
+XTerm*color12: #839496
+
+!! magenta dark/light
+XTerm*color5: #d33682
+XTerm*color13: #6c71c4
+
+!! cyan dark/light
+XTerm*color6: #2aa198
+XTerm*color14: #93a1a1
+
+!! white dark/light
+XTerm*color7: #eee8d5
+XTerm*color15: #fdf6e3
+
+!########## end solarized ##############
+
+XTerm*perl-lib        : /usr/lib/urxvt/perl/
+XTerm*perl-ext-common : default,matcher
+XTerm*urlLauncher     : /usr/bin/firefox
+XTerm*matcher.button  : 1
+XTerm*tabbed.tabbar-fg: 5
+XTerm*tabbed.tabbar-bg: 0
+XTerm*tabbed.tab-fg:    14
+XTerm*tabbed.tab-bg:    0
+XTerm*keysym.F11:   perl:fullscreen:switch
