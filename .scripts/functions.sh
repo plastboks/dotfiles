@@ -94,3 +94,10 @@ function screenshot {
 function tailfc {
     tail -f $1 | perl -pe "s/$2/\e[1;31;43m$&\e[0m/g"
 }
+
+# clean pesky webcache
+function cleanwebcache {
+    rm -r $HOME/.mozilla/firefox
+    rm -r $HOME/.cache/mozilla/firefox
+    rm -r $HOME/.cache/webkitgtk/applications/*
+}
