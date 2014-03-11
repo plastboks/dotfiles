@@ -109,6 +109,10 @@ ln -s $DOTPATH/.config/dwb $HOME/.config/dwb
 rm -r $HOME/.config/fontconfig
 ln -s $DOTPATH/.config/fontconfig $HOME/.config/fontconfig
 
+# userdirs
+rm -r $HOME/.config/user-dirs.dirs
+ln -s $DOTPATH/.config/user-dirs.dirs $HOME/.config/user-dirs.dirs
+
 # fonts
 rm -r $HOME/.fonts
 ln -s $DOTPATH/.fonts $HOME/.fonts
