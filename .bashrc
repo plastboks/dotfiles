@@ -3,6 +3,10 @@
 #
 
 export EDITOR='vim'
+export PATH=${PATH}:~/bin
+export PATH=${PATH}:~/.scripts
+export PATH=${PATH}:~/android/android-sdk-linux/tools
+export PATH=${PATH}:~/android/android-sdk-linux/platform-tools
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -39,4 +43,10 @@ fi
 
 # tmux / color terms
 #export TERM=xterm-256color
-#[ -n "$TMUX" ] && export TERM="screen-256color"
+[ -n "$TMUX" ] && export TERM="screen-256color"
+
+# Change the window title of X terminals 
+if [[ $TERM =~ "xterm|*rxvt*" ]]; then
+    # set -o functrace
+    trap 'set_title' DEBUG
+fi
