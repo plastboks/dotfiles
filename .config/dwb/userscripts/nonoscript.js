@@ -1,0 +1,3 @@
+//!javascript 
+// remove noscript elements
+
