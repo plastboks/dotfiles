@@ -8,6 +8,7 @@ export PATH=${PATH}:~/.scripts
 export PATH=${PATH}:~/android/android-sdk-linux/tools
 export PATH=${PATH}:~/android/android-sdk-linux/platform-tools
 export JAVA_HOME="/usr/lib/jvm/java-7-openjdk" #override for android studio
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
