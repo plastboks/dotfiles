@@ -113,6 +113,10 @@ ln -s $DOTPATH/.config/fontconfig $HOME/.config/fontconfig
 rm -r $HOME/.config/user-dirs.dirs
 ln -s $DOTPATH/.config/user-dirs.dirs $HOME/.config/user-dirs.dirs
 
+# redshift
+rm -r $HOME/.config/redshift.conf
+ln -s $DOTPATH/.config/redshift.conf $HOME/.config/redshift.conf
+
 # fonts
 rm -r $HOME/.fonts
 ln -s $DOTPATH/.fonts $HOME/.fonts

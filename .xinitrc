@@ -16,6 +16,9 @@ xautolock -time 5 -locker 'sh ${HOME}/.scripts/lock.sh' &
 # start dunst
 /usr/bin/dunst &
 
+# start redshift
+/usr/bin/redshift &
+
 # start mutt notify
 #/bin/sh ~/.scripts/mutt-notify.sh &
 
