@@ -15,18 +15,21 @@ function sshrfs() {
   sshfs -o workaround=rename -o cache=yes -o uid=$(id -u) -o gid=$(id -g) $1: $2
 }
 
+
 # No ugly whitespaces
 function noUglyWhitespace {
   for f in $1; do mv "$f" `echo $f | tr ' ' '_'`; done
 }
 
-# This is for now redundant, but will keep it for now...
+
+# This is redundant, but will keep it for now...
 function sshAddAll() {
   eval `ssh-agent`
   for file in `ls $HOME/.ssh/id_* | grep -v .pub`; do
     ssh-add $file
   done
 }
+
 
 # network card up
 function wifiup {
@@ -67,10 +70,12 @@ function webcamtest {
   /usr/bin/mplayer tv:// -tv driver=v4l2:width=352:height=288  
 }
 
-#open vpn
+
+# openvpn
 function runvpn {
   sudo /usr/bin/openvpn --config /etc/openvpn/mullvad_linux.conf --writepid /etc/openvpn/run.pid
 }
+
 
 #screenshot from terminal
 function screenshot {
@@ -82,6 +87,7 @@ function screenshot {
     fi
 
 }
+
 
 # tail follow with color highlight
 #
@@ -95,9 +101,24 @@ function tailfc {
     tail -f $1 | perl -pe "s/$2/\e[1;31;43m$&\e[0m/g"
 }
 
+
 # clean pesky webcache
 function cleanwebcache {
     rm -r $HOME/.mozilla/firefox
     rm -r $HOME/.cache/mozilla/firefox
     rm -r $HOME/.cache/webkitgtk/applications/*
+}
+
+
+# gpg-agent create
+function gac {
+  rm ~/.gpg-agent-info
+  /usr/bin/gpg-agent --daemon --enable-ssh-support --use-standard-socket --write-env-file
+}
+
+
+# gpg-agent read 
+function gar {
+  eval $(cat ~/.gpg-agent-info)
+  eval $(cut -d= -f 1 < ~/.gpg-agent-info | xargs echo export)
 }
