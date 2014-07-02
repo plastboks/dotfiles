@@ -11,14 +11,14 @@ do
     CPUTEMP=$(sensors | grep "Physical id" | awk '{print $4}')
     CPUGOV=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
     CPUSPEED=$(grep "cpu MHz" /proc/cpuinfo | awk '{sum+=$4} END {printf "%04d", sum/NR}')
-    
-    MEM="[{ \"full_text\": \"M: $UM\/$TM(MB)\", \"color\":\"#335C85\" },"
-    CPUS="{ \"full_text\": \"C.S: $CPUSPEED MHz\", \"color\":\"#194775\" },"
-    CPUG="{ \"full_text\": \"C.G: $CPUGOV\", \"color\":\"#335C85\" },"
-    CT="{ \"full_text\": \"C.T: $CPUTEMP\", \"color\":\"#194775\" },"
+
+    CPUS="[{ \"full_text\": \"C.S: $CPUSPEED MHz\", \"color\":\"#335C85\" },"
+    CPUG="{ \"full_text\": \"C.G: $CPUGOV\", \"color\":\"#194775\" },"
+    CT="{ \"full_text\": \"C.T: $CPUTEMP\", \"color\":\"#335C85\" },"
+    MEM="{ \"full_text\": \"M: $UM\/$TM(MB)\", \"color\":\"#194775\" },"
     KERNEL="{ \"full_text\": \"$KER\", \"color\":\"#335C85\" },"
     CDISK="{ \"full_text\": \"Dsk: $CONDISK\", \"color\":\"#194775\" },"
-
+   
     if [ $SL == "on" ]
     then
         SRL="{ \"full_text\": \"SL: $SL\", \"color\":\"#B2248F\" },"
@@ -27,5 +27,5 @@ do
     fi
 
 
-    echo "${line/[/$MEM $SRL}" || exit 1
+    echo "${line/[/$CPUS $CT $MEM $SRL}" || exit 1
 done
