@@ -19,6 +19,9 @@ xautolock -time 5 -locker 'sh ${HOME}/.scripts/lock.sh' &
 # start redshift
 /usr/bin/redshift &
 
+# start pulseaudio
+/usr/bin/pulseaudio --start &
+
 # start mutt notify
 #/bin/sh ~/.scripts/mutt-notify.sh &
 
