@@ -128,6 +128,8 @@ ln -s $DOTPATH/.config/pcmanfm $HOME/.config/pcmanfm
 # GTK setup
 rm -r $HOME/.gtkrc-2.0
 ln -s $DOTPATH/.gtkrc-2.0 $HOME
+rm -r $HOME/.config/gtk-3.0
+ln -s $DOTPATH/.config/gtk-3.0 $HOME/.config/gtk-3.0
 
 # Screenlayout
 rm -r $HOME/.screenlayout
