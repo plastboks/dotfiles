@@ -180,3 +180,6 @@ client.urgent           #2f343a #900000 #ffffff #900000
 
 # float force some applications
 for_window [class="MPlayer"] floating enable
+
+# wallpaper
+exec --no-startup-id feh --bg-scale /usr/share/archlinux/wallpaper/archlinux-deep-aurora.jpg
