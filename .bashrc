@@ -6,6 +6,7 @@ export EDITOR=vim
 export BROWSER=dwb
 
 export PATH=${PATH}:~/bin
+export PATH=${PATH}:~/.bin
 export PATH=${PATH}:~/.scripts
 
 export PATH=${PATH}:~/android/android-sdk-linux/tools
