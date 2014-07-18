@@ -22,6 +22,9 @@ xautolock -time 5 -locker 'sh ${HOME}/.scripts/lock.sh' &
 # start pulseaudio
 /usr/bin/pulseaudio --start &
 
+# xcompmgr
+xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
+
 # start mutt notify
 #/bin/sh ~/.scripts/mutt-notify.sh &
 
