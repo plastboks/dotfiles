@@ -1,16 +1,16 @@
-# bell script
+# bell settings
 /bin/sh ~/.scripts/bell.sh &
-
-# screensaver
-xautolock -time 5 -locker 'sh ${HOME}/.scripts/lock.sh' & 
 
 # keyboard settings
 /bin/sh ~/.scripts/keyboard.sh &
 
-# mouse settings
-#/bin/sh ~/.scripts/mouse.sh & 
+# trackball settings
+#/bin/sh ~/.scripts/trackball.sh & 
 
-# setup monitors
+# screensaver
+/usr/bin/xautolock -time 5 -locker 'sh ${HOME}/.scripts/lock.sh' & 
+
+# monitors setup
 /bin/sh ~/.screenlayout/default.sh &
 
 # start dunst
@@ -22,8 +22,8 @@ xautolock -time 5 -locker 'sh ${HOME}/.scripts/lock.sh' &
 # start pulseaudio
 /usr/bin/pulseaudio --start &
 
-# xcompmgr
-xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
+# start xcompmgr
+/usr/bin/xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
 
 # start mutt notify
 #/bin/sh ~/.scripts/mutt-notify.sh &
