@@ -17,7 +17,16 @@ URxvt*saveLines: 100000
 
 !########## solarized theme ##############
 
-URxvt*background:0
+! URxvt*.transparent: true
+! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
+! URxvt*tintColor: Blue
+! URxvt*.shading:10
+! URxvt*background:0
+! URxvt*background:#1C1C1C
+URxvt.depth: 32
+!URxvt.background: rgba:0000/0000/0000/dddd
+URxvt.background: [85]#1C1C1C
+#URxvt*background:0
 URxvt*foreground:#C3C3C3
 
 URxvt*fading:0

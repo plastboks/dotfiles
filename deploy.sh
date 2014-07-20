@@ -77,9 +77,9 @@ ln -s $DOTPATH/.mailcap $HOME
 rm -r $HOME/.Xkbmap
 ln -s $DOTPATH/.Xkbmap $HOME
 
-# Xdefaults
-rm -r $HOME/.Xdefaults
-ln -s $DOTPATH/.Xdefaults $HOME
+# Xresources 
+rm -r $HOME/.Xresources
+ln -s $DOTPATH/.Xresources $HOME
 
 # TMUX
 rm -r $HOME/.tmux.conf

@@ -25,6 +25,10 @@
 # start xcompmgr
 /usr/bin/xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
 
+# xrdb
+xrdb ~/.Xresources
+
+
 # start mutt notify
 #/bin/sh ~/.scripts/mutt-notify.sh &
 
