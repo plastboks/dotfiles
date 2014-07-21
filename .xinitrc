@@ -7,27 +7,29 @@
 # trackball settings
 #/bin/sh ~/.scripts/trackball.sh & 
 
-# screensaver
-/usr/bin/xautolock -time 5 -locker 'sh ${HOME}/.scripts/lock.sh' & 
-
 # monitors setup
 /bin/sh ~/.screenlayout/default.sh &
 
+# screensaver
+xautolock -time 5 -locker 'sh ${HOME}/.scripts/lock.sh' & 
+
 # start dunst
-/usr/bin/dunst &
+dunst &
 
 # start redshift
-/usr/bin/redshift &
+redshift &
 
 # start pulseaudio
-/usr/bin/pulseaudio --start &
+pulseaudio --start &
 
 # start xcompmgr
-/usr/bin/xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
+xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
+
+# start urxvt server
+urxvtd -q -f -o &
 
 # xrdb
-xrdb ~/.Xresources
-
+xrdb ~/.Xresources &
 
 # start mutt notify
 #/bin/sh ~/.scripts/mutt-notify.sh &
