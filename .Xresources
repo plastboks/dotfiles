@@ -25,7 +25,7 @@ URxvt*saveLines: 100000
 ! URxvt*background:#1C1C1C
 URxvt.depth: 32
 !URxvt.background: rgba:0000/0000/0000/dddd
-URxvt.background: [85]#1C1C1C
+URxvt.background: [95]#1C1C1C
 #URxvt*background:0
 URxvt*foreground:#C3C3C3
 
