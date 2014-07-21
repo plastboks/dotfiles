@@ -6,6 +6,7 @@
 ! run "fc-list" for a list of available fonts
 URxvt*font: xft:LiberationMono for powerline:pixelsize=12
 URxvt*intensityStyles: false
+URxvt*letterSpace: -1
 
 !# generic
 URxvt*scrollBar: False
