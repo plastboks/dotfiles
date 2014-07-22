@@ -12,10 +12,10 @@ do
     CPUGOV=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
     CPUSPEED=$(grep "cpu MHz" /proc/cpuinfo | awk '{sum+=$4} END {printf "%04d", sum/NR}')
 
-    CPUS="[{ \"full_text\": \"C.S: $CPUSPEED MHz\", \"color\":\"#335C85\" },"
+    CPUS="[{ \"full_text\": \"$CPUSPEED MHz\", \"color\":\"#335C85\" },"
     CPUG="{ \"full_text\": \"C.G: $CPUGOV\", \"color\":\"#194775\" },"
-    CT="{ \"full_text\": \"C.T: $CPUTEMP\", \"color\":\"#335C85\" },"
-    MEM="{ \"full_text\": \"M: $UM\/$TM(MB)\", \"color\":\"#194775\" },"
+    CT="{ \"full_text\": \"$CPUTEMP\", \"color\":\"#335C85\" },"
+    MEM="{ \"full_text\": \"$UM\/$TM(MB)\", \"color\":\"#194775\" },"
     KERNEL="{ \"full_text\": \"$KER\", \"color\":\"#335C85\" },"
     CDISK="{ \"full_text\": \"Dsk: $CONDISK\", \"color\":\"#194775\" },"
    
