@@ -5,4 +5,4 @@
 #/usr/bin/keychain -k all
 
 # activate locker
-/usr/bin/i3lock --color=000000
+/usr/bin/i3lock --color=000000 -p default -d -n
