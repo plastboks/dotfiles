@@ -1,6 +1,6 @@
 gtk-icon-theme-name = "Tango"
 gtk-theme-name = "Murrine-Gray"
-gtk-font-name = "DejaVu Sans 8"
+gtk-font-name = "DejaVu Sans 10"
 
 style "uzbl" { 
     GtkRange::slider-width = 0
