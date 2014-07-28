@@ -1,5 +1,4 @@
-gtk-icon-theme-name = "Tango"
-gtk-theme-name = "Murrine-Gray"
+gtk-icon-theme-name = "Faenza"
 gtk-font-name = "DejaVu Sans 10"
 
 style "uzbl" { 
