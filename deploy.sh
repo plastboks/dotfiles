@@ -146,3 +146,7 @@ ln -s $DOTPATH/.config/dunst $HOME/.config/dunst
 # livestreamer
 rm -r $HOME/.livestreamerrc
 ln -s $DOTPATH/.livestreamer $HOME
+
+# conky
+rm -r $HOME/.conkyrc
+ln -s $DOTPATH/.conkyrc $HOME
