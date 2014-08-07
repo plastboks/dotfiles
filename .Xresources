@@ -1,14 +1,16 @@
+!###############
+!# -- Fonts -- #
+!###############
+! run "fc-list" for a list of available fonts
+*font: xft:LiberationMono for powerline:pixelsize=12
+*intensityStyles: false
+*letterSpace: -1
+
+
 !################################
 !# -- Some URxvt definitions -- #
 !################################
 
-!# fonts
-! run "fc-list" for a list of available fonts
-URxvt*font: xft:LiberationMono for powerline:pixelsize=12
-URxvt*intensityStyles: false
-URxvt*letterSpace: -1
-
-!# generic
 URxvt*scrollBar: False
 URxvt*scrollTtyOutput: False
 URxvt*urgentOnBell: True
@@ -27,24 +29,22 @@ URxvt.depth: 32
 URxvt*fading:0
 
 URxvt*perl-lib        : /usr/lib/urxvt/perl/
-URxvt*perl-ext-common : default,matcher
+URxvt*perl-ext-common : default,matcher,urxvt-colors
 URxvt*url-launcher    : /usr/bin/xdg-open
+URxvt*keysym.F12      : perl:urxvt-colors:
 URxvt*colorUL         : #4682B4
 URxvt*matcher.button  : 1
 URxvt*tabbed.tabbar-fg: 5
 URxvt*tabbed.tabbar-bg: 0
-URxvt*tabbed.tab-fg:    14
-URxvt*tabbed.tab-bg:    0
+URxvt*tabbed.tab-fg   : 14
+URxvt*tabbed.tab-bg   : 0
+URxvt*dynamicColors   : on
 
 
 !################################
 !# -- Some XTERM definitions -- #
 !################################
 
-!# fonts
-! run "fc-list" for a list of available fonts
-
-!# generic
 XTerm*scrollBar: False
 XTerm*scrollTtyOutput: False
 XTerm*urgentOnBell: True
@@ -52,16 +52,15 @@ XTerm*scrollTtyKeypress: True
 XTerm*secondaryScroll: True
 XTerm*saveLines: 100000
 
-
 XTerm*perl-lib        : /usr/lib/urxvt/perl/
 XTerm*perl-ext-common : default,matcher
 XTerm*urlLauncher     : /usr/bin/firefox
 XTerm*matcher.button  : 1
 XTerm*tabbed.tabbar-fg: 5
 XTerm*tabbed.tabbar-bg: 0
-XTerm*tabbed.tab-fg:    14
-XTerm*tabbed.tab-bg:    0
-
+XTerm*tabbed.tab-fg   : 14
+XTerm*tabbed.tab-bg   : 0
+XTerm*dynamicColors   : true
 
 
 !##############################

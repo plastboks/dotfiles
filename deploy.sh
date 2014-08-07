@@ -150,3 +150,8 @@ ln -s $DOTPATH/.livestreamer $HOME
 # conky
 rm -r $HOME/.conkyrc
 ln -s $DOTPATH/.conkyrc $HOME
+
+# dynamic colors
+rm -r $HOME/.dynamic-colors
+ln -s $DOTPATH/.dynamic-colors $HOME
+sudo cp $DOTPATH/.urxvt-colors /usr/lib/urxvt/perl/urxvt-colors

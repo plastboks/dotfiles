@@ -14,6 +14,8 @@ export PATH=${PATH}:~/android/android-sdk-linux/platform-tools
 export JAVA_HOME='/usr/lib/jvm/java-7-openjdk' #override for android studio
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on' #fix for intellji
 
+export PATH="$HOME/.dynamic-colors/bin:$PATH"
+
 source ~/.scripts/functions.sh
 source ~/.scripts/aliases.sh
 
