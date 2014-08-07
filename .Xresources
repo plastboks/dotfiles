@@ -159,4 +159,3 @@ XTerm*tabbed.tabbar-fg: 5
 XTerm*tabbed.tabbar-bg: 0
 XTerm*tabbed.tab-fg:    14
 XTerm*tabbed.tab-bg:    0
-XTerm*keysym.F11:   perl:fullscreen:switch
