@@ -155,3 +155,7 @@ ln -s $DOTPATH/.conkyrc $HOME
 rm -r $HOME/.dynamic-colors
 ln -s $DOTPATH/.dynamic-colors $HOME
 sudo cp $DOTPATH/.urxvt-colors /usr/lib/urxvt/perl/urxvt-colors
+
+# compton
+rm -r $HOME/.compton.conf
+ln -s $DOTPATH/.compton.conf $HOME
