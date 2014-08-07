@@ -1,10 +1,16 @@
 .dotfiles
 =========
-personal dotfiles... nothing more...
+personal dotfiles... Nothing more...
 
 Install
 =======
 * run `sh deploy.sh`. NB: this will delete and replace a lot of files in your home directory.
+
+Submodules
+==========
+Some submodules have been added lately. Install with
+* run `git submodule init`
+* run `git submodule update`
 
 Laptop versions
 ===============
@@ -12,4 +18,4 @@ Some of the configuration files have their own laptop version. This because the 
 
 Disclaimer
 ==========
-Most of these dotfiles are suited for a arch/i3 (i3wm.org) enviroment. Use at own risk.
+Most of these dotfiles are suited for a arch/i3 (i3wm.org) environment. Use at own risk.
