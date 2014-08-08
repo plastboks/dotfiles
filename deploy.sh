@@ -131,10 +131,6 @@ ln -s $DOTPATH/.screenlayout $HOME
 rm -r $HOME/.config/dunst
 ln -s $DOTPATH/.config/dunst $HOME/.config/dunst
 
-# asound
-#rm -r $HOME/.asoundrc
-#ln -s $DOTPATH/.asoundrc $HOME
-
 # livestreamer
 rm -r $HOME/.livestreamerrc
 ln -s $DOTPATH/.livestreamer $HOME
