@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Start a composition manager.
-# (compton in this case)
+# (xcompmgr in this case)
 # Yanked from the archlinux site: https://wiki.archlinux.org/index.php/Xcompmgr
 
 comphelp() {
@@ -14,18 +14,17 @@ comphelp() {
 }
 
 checkcomp() {
-    pgrep compton &>/dev/null
+    pgrep xcompmgr &>/dev/null
 }
 
 stopcomp() {
-    checkcomp && killall compton
+    checkcomp && killall xcompmgr
 }
 
 startcomp() {
     stopcomp
     # Example settings only. Replace with your own.
-    # compton -CcfF -I-.015 -O-.03 -D6 -t-1 -l-3 -r4.2 -o.5 &
-    compton --config ~/.compton.conf &
+    xcompmgr -CcfF -I-.015 -O-.03 -D6 -t-1 -l-3 -r4.2 -o.5 &
     exit
 }
 
