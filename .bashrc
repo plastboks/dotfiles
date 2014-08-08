@@ -4,6 +4,7 @@
 
 export EDITOR=vim
 export BROWSER=dwb
+export TRANSPARENCY=95
 
 export PATH=${PATH}:~/bin
 export PATH=${PATH}:~/.bin
