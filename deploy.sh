@@ -117,10 +117,6 @@ ln -s $DOTPATH/.config/redshift.conf $HOME/.config/redshift.conf
 rm -r $HOME/.fonts
 ln -s $DOTPATH/.fonts $HOME/.fonts
 
-# pcmanfm
-rm -r $HOME/.config/pcmanfm
-ln -s $DOTPATH/.config/pcmanfm $HOME/.config/pcmanfm
-
 # GTK setup
 rm -r $HOME/.gtkrc-2.0
 ln -s $DOTPATH/.gtkrc-2.0 $HOME
