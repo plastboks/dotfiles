@@ -19,15 +19,16 @@ export PATH="$HOME/.dynamic-colors/bin:$PATH"
 
 source ~/.scripts/functions.sh
 source ~/.scripts/aliases.sh
+source ~/.scripts/git-prompt.sh
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 # Change PS1 based on session.
 if [ ! -n "$SSH_TTY" ]; then
-  PS1="\[\033[35m\][\[\033[36m\]\u@\\h \\W\[\033[35m\]]\[\033[m\]\$ "
+    PS1="\[\033[35m\][\[\033[36m\]\u@\\h \\W\$(__git_ps1)\[\033[35m\]]\[\033[m\] $ "
 else
-  PS1="SSH-[\[\033[0;31m\]\u@\\h \\W\[\033[m\]]\$ "
+    PS1="SSH-[\[\033[0;31m\]\u@\\h \\W\[\033[m\]]\$ "
 fi
 
 # gpg-agent (only for local users)
