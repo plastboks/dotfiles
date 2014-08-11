@@ -17,6 +17,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on' #fix for intellji
 
 export PATH="$HOME/.dynamic-colors/bin:$PATH"
 
+source ~/.scripts/colors.sh
 source ~/.scripts/functions.sh
 source ~/.scripts/aliases.sh
 source ~/.scripts/git-prompt.sh
@@ -26,7 +27,7 @@ source ~/.scripts/git-prompt.sh
 
 # Change PS1 based on session.
 if [ ! -n "$SSH_TTY" ]; then
-    PS1="\[\033[35m\][\[\033[36m\]\u@\\h \\W\$(__git_ps1)\[\033[35m\]]\[\033[m\] $ "
+    PS1="\[$bldpur\][\[$txtcyn\]\u@\\h \\W\[$txtylw\]\$(__git_ps1)\[$bldpur\]]\[$txtrst\]$ "
 else
     PS1="SSH-[\[\033[0;31m\]\u@\\h \\W\[\033[m\]]\$ "
 fi
