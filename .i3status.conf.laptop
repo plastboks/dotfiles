@@ -20,7 +20,7 @@ wireless wlp3s0 {
         format_up = "W: (%quality @ %essid) %ip"
         format_down = "W: down"
         color_bad = "#991F7A"
-        color_good = "#194775"
+        color_good = "#878787"
 }
 
 ethernet eth0 {

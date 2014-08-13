@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# colors 
+
+CHIG="#656565"
+CLOW="#878787"
+CSPC="#B2248F"
+
 i3status --config ~/.i3status.conf | while :
 do
     read line
@@ -13,19 +19,19 @@ do
     CPUGOV=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
     CPUSPEED=$(grep "cpu MHz" /proc/cpuinfo | awk '{sum+=$4} END {printf "%04d", sum/NR}')
 
-    CPUS="[{ \"full_text\": \"$CPUSPEED MHz\", \"color\":\"#335C85\" },"
-    CPUG="{ \"full_text\": \"C.G: $CPUGOV\", \"color\":\"#194775\" },"
-    FANS="{ \"full_text\": \"$FANSPEED RPM\", \"color\":\"#335C85\" },"
-    CT="{ \"full_text\": \"$CPUTEMP\", \"color\":\"#335C85\" },"
-    MEM="{ \"full_text\": \"$UM\/$TM(MB)\", \"color\":\"#194775\" },"
-    KERNEL="{ \"full_text\": \"$KER\", \"color\":\"#335C85\" },"
-    CDISK="{ \"full_text\": \"Dsk: $CONDISK\", \"color\":\"#194775\" },"
+    CPUS="[{ \"full_text\": \"$CPUSPEED MHz\", \"color\":\"$CHIG\" },"
+    CPUG="{ \"full_text\": \"C.G: $CPUGOV\", \"color\":\"$CLOW\" },"
+    FANS="{ \"full_text\": \"$FANSPEED RPM\", \"color\":\"$CLOW\" },"
+    CT="{ \"full_text\": \"$CPUTEMP\", \"color\":\"$CHIG\" },"
+    MEM="{ \"full_text\": \"$UM\/$TM(MB)\", \"color\":\"$CLOW\" },"
+    KERNEL="{ \"full_text\": \"$KER\", \"color\":\"$CHIG\" },"
+    CDISK="{ \"full_text\": \"Dsk: $CONDISK\", \"color\":\"$CLOW\" },"
    
     if [ $SL == "on" ]
     then
-        SRL="{ \"full_text\": \"SL: $SL\", \"color\":\"#B2248F\" },"
+        SRL="{ \"full_text\": \"SL: $SL\", \"color\":\"$CSPC\" },"
     else
-        SRL="{ \"full_text\": \"SL: $SL\", \"color\":\"#335C85\" },"
+        SRL="{ \"full_text\": \"SL: $SL\", \"color\":\"$CHIG\" },"
     fi
 
 
