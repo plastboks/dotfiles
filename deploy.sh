@@ -20,6 +20,10 @@ ln -s $DOTPATH/.bin $HOME
 rm -r $HOME/.scripts
 ln -s $DOTPATH/.scripts $HOME
 
+# includes
+rm -r $HOME/.includes
+ln -s $DOTPATH/.includes $HOME
+
 # bash files
 rm $HOME/.bashrc
 ln -s $DOTPATH/.bashrc $HOME

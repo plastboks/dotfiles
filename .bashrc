@@ -2,28 +2,16 @@
 # ~/.bashrc
 #
 
-export EDITOR=vim
-export BROWSER=dwb
-export TRANSPARENCY=95
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
-export PATH=${PATH}:~/bin
-export PATH=${PATH}:~/.bin
-export PATH=${PATH}:~/.scripts
-
-export PATH=${PATH}:~/android/android-sdk-linux/tools
-export PATH=${PATH}:~/android/android-sdk-linux/platform-tools
-export JAVA_HOME='/usr/lib/jvm/java-7-openjdk' #override for android studio
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on' #fix for intellji
-
-export PATH="$HOME/.dynamic-colors/bin:$PATH"
+source ~/.includes/aliases
+source ~/.includes/exports
 
 source ~/.scripts/colors.sh
 source ~/.scripts/functions.sh
-source ~/.scripts/aliases.sh
 source ~/.scripts/git-prompt.sh
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
 
 # Change PS1 based on session.
 if [ ! -n "$SSH_TTY" ]; then
