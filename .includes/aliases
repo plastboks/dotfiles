@@ -10,3 +10,6 @@ alias enable_alert='PS1="$PS1\a"'
 
 # alias for use with git
 alias lsd='git log --graph --decorate --pretty=oneline --abbrev-commit --all'
+
+# cal alias
+alias calm='cal -w -m -3'
