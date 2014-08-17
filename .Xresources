@@ -46,7 +46,7 @@ URxvt*dynamicColors   : on
 !##############################
 !solarized theme
 
-URxvt*.background: [95]#1C1C1C
+URxvt*.background: [90]#1C1C1C
 !*background:0
 URxvt*foreground:#C3C3C3
 URxvt*fadeColor: #CFCFCF
