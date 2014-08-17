@@ -34,6 +34,13 @@ urxvtd -q -f -o &
 # xrdb
 xrdb ~/.Xresources &
 
+# set wallpaper
+if [ ! -f ~/.wallpaper.png ]; then
+    feh --bg-scale /usr/share/archlinux/wallpaper/archlinux-simplyblack.png
+else
+    feh --bg-scale ~/.wallpaper.png
+fi
+
 # start mutt notify
 #/bin/sh ~/.scripts/mutt-notify.sh &
 
