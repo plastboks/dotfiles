@@ -7,8 +7,8 @@
 
 source ~/.includes/aliases
 source ~/.includes/exports
+source ~/.includes/colors
 
-source ~/.scripts/colors.sh
 source ~/.scripts/functions.sh
 source ~/.scripts/git-prompt.sh
 
