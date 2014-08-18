@@ -1,0 +1,31 @@
+#!/bin/bash
+#
+# My small mutt account switcher preloader script.
+#
+
+declare -i i=0
+declare -a array
+
+printf "Choose a configuration file:\n--\n"
+
+for a in ~/.mutt/*.acc
+do
+    if [[ -f $a ]]; then
+        let i++
+        array[i]=$a
+        echo $i: $a
+    fi
+done
+
+let i++
+printf "\n"
+read -p "Select one of the above: " input
+
+if [ "$input" -ge $i ] ; then
+    echo "#### Bad input ####"
+else
+    export MUTT_SOURCE=${array[$input]}
+    \mutt
+fi
+
+exit

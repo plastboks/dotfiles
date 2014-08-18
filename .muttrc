@@ -1,6 +1,6 @@
 # A basic .muttrc for use with Gmail
 
-source ~/.mutt/private.muttrc                # source sources...
+source $MUTT_SOURCE                # source sources...
 #source ~/.mutt/colors                     # source colors
 source ~/.mutt/mutt-colors-solarized-dark-256.muttrc # source colors
 source ~/.mutt/gpg.rc                     # GPG

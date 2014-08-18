@@ -13,3 +13,5 @@ alias lsd='git log --graph --decorate --pretty=oneline --abbrev-commit --all'
 
 # cal alias
 alias calm='cal -w -m -3'
+
+alias mutt='~/.scripts/mutt_launcher'
