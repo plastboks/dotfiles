@@ -17,15 +17,14 @@ do
     fi
 done
 
-let i++
 printf "\n"
 read -p "Select one of the above: " input
 
-if [ "$input" -ge $i ] ; then
-    echo "#### Bad input ####"
-else
+if [[ $input = [1-$i] ]] ; then
     export MUTT_SOURCE=${array[$input]}
     \mutt
+else
+    echo "#### Bad input ####"
 fi
 
 exit
