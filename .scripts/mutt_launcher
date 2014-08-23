@@ -6,7 +6,7 @@
 declare -i i=0
 declare -a array
 
-printf "Choose a configuration file:\n--\n"
+printf "Available account file(s):\n--\n"
 
 for a in ~/.mutt/*.acc
 do
