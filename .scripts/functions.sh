@@ -76,6 +76,14 @@ function runvpn {
   sudo /usr/bin/openvpn --config /etc/openvpn/mullvad_linux.conf --writepid /etc/openvpn/run.pid
 }
 
+function runvpnpptpdebug {
+    if [ -z "$1" ]
+    then
+      echo "Please enter pptp connection name"
+    else
+       sudo pon $1 debug dump logfd 2 nodetach
+    fi
+}
 
 #screenshot from terminal
 function screenshot {
