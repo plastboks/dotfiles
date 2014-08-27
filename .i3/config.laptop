@@ -182,3 +182,12 @@ client.urgent           #2f343a #900000 #ffffff #900000
 
 # float force some applications
 for_window [class="MPlayer"] floating enable
+
+# backlight for laptop
+bindsym XF86MonBrightnessUp  exec  xbacklight -inc 10
+bindsym XF86MonBrightnessDown  exec  xbacklight -dec 10
+
+# volume keys for laptop
+bindsym XF86AudioRaiseVolume exec ponymix increase 10
+bindsym XF86AudioLowerVolume exec ponymix decrease 10
+bindsym XF86AudioMute exec ponymix toggle
