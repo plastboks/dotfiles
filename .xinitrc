@@ -34,6 +34,10 @@ urxvtd -q -f -o &
 # xrdb
 xrdb ~/.Xresources &
 
+# autocutsel
+autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
+
 # set wallpaper
 if [ ! -f ~/.wallpaper.png ]; then
     feh --bg-scale /usr/share/archlinux/wallpaper/archlinux-simplyblack.png
