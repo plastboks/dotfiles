@@ -1,0 +1,58 @@
+# bell settings
+/bin/sh ~/.scripts/bell.sh &
+
+# keyboard settings
+/bin/sh ~/.scripts/keyboard.sh &
+
+# trackball settings
+#/bin/sh ~/.scripts/trackball.sh & 
+
+# monitors setup
+/bin/sh ~/.screenlayout/default.sh &
+
+# screensaver
+xautolock -time 5 -locker 'sh ${HOME}/.scripts/lock.sh' & 
+
+# start dunst
+dunst &
+
+# start redshift
+redshift &
+
+# start pulseaudio
+pulseaudio --start &
+
+# start xcompmgr
+xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
+
+# straight out of compton
+#compton --config ~/.compton.conf
+
+# start urxvt server
+urxvtd -q -f -o &
+
+# xrdb
+xrdb ~/.Xresources &
+
+# autocutsel
+autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
+
+# set wallpaper
+if [ ! -f ~/.wallpaper.png ]; then
+    feh --bg-scale /usr/share/archlinux/wallpaper/archlinux-simplyblack.png
+else
+    feh --bg-scale ~/.wallpaper.png
+fi
+
+# start mutt notify
+#/bin/sh ~/.scripts/mutt-notify.sh &
+
+# gpg agent
+if [ ! -f ~/.gpg-agent-info ]; then
+  gpg-agent --daemon --enable-ssh-support --use-standard-socket --write-env-file
+fi
+
+# execute i3
+xsetroot -cursor_name left_ptr
+exec xmonad
