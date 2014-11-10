@@ -45,9 +45,6 @@ else
     feh --bg-scale ~/.wallpaper.png
 fi
 
-# start mutt notify
-#/bin/sh ~/.scripts/mutt-notify.sh &
-
 # gpg agent
 if [ ! -f ~/.gpg-agent-info ]; then
   gpg-agent --daemon --enable-ssh-support --use-standard-socket --write-env-file
