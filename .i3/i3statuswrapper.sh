@@ -5,7 +5,7 @@ do
     read line
     SL=$(xset -q|grep "Scroll Lock"| awk '{ print $12 }')
     TM=$( free -m | grep "Mem" | awk '{print $2}')
-    UM=$( free -m | grep "buffers\/cache" | awk '{print $3}')
+    UM=$( free -m | grep "Mem" | awk '{print $6}')
     KER=$(uname -r)
     CONDISK=$(grep -c "Vendor" /proc/scsi/scsi)
     CPUTEMP=$(sensors | grep "Physical id" | awk '{print $4}')
