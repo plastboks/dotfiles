@@ -111,10 +111,19 @@ function tailfc {
 
 
 # clean pesky webcache
-function cleanwebcache {
-    rm -r $HOME/.mozilla/firefox
-    rm -r $HOME/.cache/mozilla/firefox
-    rm -r $HOME/.cache/webkitgtk/applications/*
+    function cleanwebcache {
+    if [ -d "$HOME/.mozilla/firefox" ]; then
+        echo "Deleting ~/.mozilla/firefox"
+        rm -r $HOME/.mozilla/firefox
+    fi
+    if [ -d "$HOME/.cache/mozilla/firefox" ]; then
+        echo "Deleting ~/.cache/mozilla/firefox"
+        rm -r $HOME/.cache/mozilla/firefox
+    fi
+    if [ -d "$HOME/.cache/webkitgtk/applications" ]; then
+        echo "Deleting ~/.cache/webkitgtk/applications"
+        rm -r $HOME/.cache/webkitgtk/applications/*
+    fi
 }
 
 
