@@ -122,7 +122,7 @@ function tailfc {
     fi
     if [ -d "$HOME/.cache/webkitgtk/applications" ]; then
         echo "Deleting ~/.cache/webkitgtk/applications"
-        rm -r $HOME/.cache/webkitgtk/applications/*
+        rm -r $HOME/.cache/webkitgtk/applications
     fi
 }
 
