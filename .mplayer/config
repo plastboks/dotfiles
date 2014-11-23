@@ -8,4 +8,4 @@ cache=8192
 #geometry=50%:50% #startup placement
 lirc=false
 vo=vdpau,
-vc=ffh264vdpau,ffmpeg12vdpau,ffodivxvdpau,ffwmv3vdpau,ffvc1vdpau,
+#vc=ffh264vdpau,ffmpeg12vdpau,ffodivxvdpau,ffwmv3vdpau,ffvc1vdpau,
