@@ -18,3 +18,5 @@ export JAVA_HOME='/usr/lib/jvm/java-default-runtime'
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on' #fix for intellji
 
 export PATH="$HOME/.dynamic-colors/bin:$PATH"
+
+export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh;
