@@ -125,17 +125,3 @@ function tailfc {
         rm -r $HOME/.cache/webkitgtk/applications
     fi
 }
-
-
-# gpg-agent create
-function gac {
-  rm ~/.gpg-agent-info
-  /usr/bin/gpg-agent --daemon --enable-ssh-support --use-standard-socket --write-env-file
-}
-
-
-# gpg-agent read 
-function gar {
-  eval $(cat ~/.gpg-agent-info)
-  eval $(cut -d= -f 1 < ~/.gpg-agent-info | xargs echo export)
-}
