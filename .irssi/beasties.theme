@@ -1,0 +1,101 @@
+#
+#
+# Beastie's irssi theme.
+#
+# Thanks to crshd.
+#
+#
+# Visit irc.unixhub.net #unixhub :) 
+#
+
+
+
+# default foreground color (%N) - -1 is the "default terminal color"
+default_color = "-1";
+
+# print timestamp/servertag at the end of line, not at beginning
+info_eol = "false";
+
+# these characters are automatically replaced with specified color
+# (dark grey by default)
+replaces = { "[]" = "%g$*%n"; };
+
+abstracts = {
+
+  ############# generic ###############################
+
+  #indent_default = "               + ";
+  indent_default = "";
+
+  # text to insert at the beginning of each non-message line
+  # line_start = "%g//%n ";
+  line_start = "";
+
+  # timestamp styling, nothing by default
+  #timestamp = "%K$0-%n";
+  timestamp = "";
+
+  # any kind of text that needs hilighting, default is to bold
+  hilight = "%_$*%_";
+
+  # any kind of error message, default is bright red
+  error = "%R$*%n";
+
+  # channel name is printed
+  channel = "%b$*%n";
+
+  # nick is printed
+  #nick = "%_$*%_";
+  nick = "";
+
+  # nick host is printed
+  nickhost = "%g$*";
+
+  # server name is printed
+  server = "%_$*%_";
+
+  # some kind of comment is printed
+  comment = "%n(%b\"$*\"%n);";
+
+  # reason for something is printed (part, quit, kick, ..)
+  reason = "{comment $*}";
+
+  # mode change is printed ([+o nick])
+  mode = "{comment $*}";
+
+  ## channel specific messages
+
+  # highlighted nick/host is printed (joins)
+  channick_hilight = "%g$*%N";
+  chanhost_hilight = "{nickhost $*}";
+
+  # nick/host is printed (parts, quits, etc.)
+  channick = "$*";
+  chanhost = "{nickhost $*}";
+
+  # highlighted channel name is printed
+  channelhilight = "%g$*%n";
+
+  # ban/ban exception/invite list mask is printed
+  ban = "$*";
+
+  ########### messages #################################
+
+  # the basic styling of how to print message, $0 = nick mode, $1 = nick
+  # msgnick = "$1-$0%K·%N %|";
+  #msgnick = "%K$0%N $1 %K│ %|%N";
+  # msgnick = "%K$0%N $1 %K· %|%N";
+  msgnick = "%K%N $1 %K│  %N";
+
+  # $0 = nick mode, $1 = nick
+  ownmsgnick = "{msgnick $0 $1}";
+  ownnick = "%Y$*%n";
+
+  # public message in channel, $0 = nick mode, $1 = nick
+  pubmsgnick = "{msgnick $0 $1}";
+  pubnick = "%N$*%n";
+
+  # public highlighted message in channel
+  pubmsghinick = "{msgnick $0 $1}%r";
+  menick = "%R$*%n";
+};
