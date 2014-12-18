@@ -45,10 +45,5 @@ else
     feh --bg-scale ~/.wallpaper.png
 fi
 
-# gpg agent
-if [ ! -f ~/.gpg-agent-info ]; then
-  gpg-agent --daemon --enable-ssh-support --use-standard-socket --write-env-file
-fi
-
 # execute i3
 exec i3
