@@ -20,6 +20,12 @@ LIST=(
     conkyrc
     screenlayout
 
+    # shell
+    bash_profile
+    bashrc
+    zshrc
+    zshenv
+
     # media
     mplayer
     newsbeuter
