@@ -30,6 +30,12 @@ ln -s $DOTPATH/.bashrc $HOME
 rm $HOME/.bash_profile
 ln -s $DOTPATH/.bash_profile $HOME
 
+# Zsh
+rm $HOME/.zshrc
+rm $HOME/.zshenv
+ln -s $DOTPATH/.zshrc $HOME
+ln -s $DOTPATH/.zshenv $HOME
+
 # gnupg
 rm -r $HOME/.gnupg
 ln -s $DOTPATH/.gnupg $HOME
