@@ -25,6 +25,7 @@ LIST=(
     bashrc
     zshrc
     zshenv
+    zprofile
 
     # media
     mplayer
@@ -73,10 +74,10 @@ function showList() {
 function symlink() {
     if [ -d "$HOME/.$1" -o -f "$HOME/.$1" ]; then
         printf "=> $HOME/.$1 exists. Deleting it\n"
-        # rm -r $1
+        rm -r $HOME/.$1
     fi
     printf "=> Symlinking $HOME/.$1\n"
-    # ln -s $DOTPATH/.$1 $HOME/.$1
+    ln -s $DOTPATH/.$1 $HOME/.$1
 }
 
 function symlinkAll() {
@@ -149,5 +150,8 @@ while test $# -gt 0; do
     esac
 done
 
-if [ "x$1" = "x" ]; then showHelp fi
+if [ "x$1" = "x" ]; then
+    showHelp
+fi
+
 exit
