@@ -26,6 +26,7 @@ LIST=(
     zshrc
     zshenv
     zprofile
+    oh-my-zsh
 
     # media
     mplayer
