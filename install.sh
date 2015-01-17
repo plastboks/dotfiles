@@ -27,6 +27,7 @@ LIST=(
     zshenv
     zprofile
     oh-my-zsh
+    hushlogin
 
     # media
     mplayer
