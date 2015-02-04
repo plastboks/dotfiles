@@ -8,10 +8,11 @@ alias ls='ls --color=auto'
 alias cpa='rsync -avzP'
 alias enable_alert='PS1="$PS1\a"'
 
-# alias for use with git
-alias lsd='git log --graph --decorate --pretty=oneline --abbrev-commit --all'
-
 # cal alias
 alias calm='cal -w -m -3'
 
 alias mutt='~/.scripts/mutt_launcher'
+
+# alias for use with git
+alias lsd='git log --graph --decorate --pretty=oneline --abbrev-commit --all'
+alias glog='git log --graph --all --pretty=format:"%C(yellow)%h -%C(auto)%d %C(bold cyan)%s %C(bold white)(%cr)%Creset %C(dim white)<%an>"'
