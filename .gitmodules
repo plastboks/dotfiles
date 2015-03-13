@@ -8,5 +8,5 @@
 	path = .oh-my-zsh
 	url = git://github.com/robbyrussell/oh-my-zsh.git
 [submodule "bitpocket"]
-	path = bitpocket
+	path = .bitpocket
 	url = https://github.com/sickill/bitpocket.git
