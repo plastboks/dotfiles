@@ -9,6 +9,11 @@ CSPC="#B2248F"
 i3status --config ~/.i3status.conf | while :
 do
     read line
+
+    COLOR1="#668066"
+    COLOR2="#7A997A"
+    COLOR3="#B2248F"
+
     SL=$(xset -q|grep "Scroll Lock"| awk '{ print $12 }')
     TM=$( free -m | grep "Mem" | awk '{print $2}')
     UM=$( free -m | grep "Mem" | awk '{print $3}')
@@ -20,22 +25,24 @@ do
     CPUSPEED=$(grep "cpu MHz" /proc/cpuinfo | awk '{sum+=$4} END {printf "%04d", sum/NR}')
     BACKLIGHT=$(printf "%0.f" "$(xbacklight -get)")
 
-    CPUS="[{ \"full_text\": \"$CPUSPEED MHz\", \"color\":\"$CHIG\" },"
-    CPUG="{ \"full_text\": \"C.G: $CPUGOV\", \"color\":\"$CLOW\" },"
-    FANS="{ \"full_text\": \"$FANSPEED RPM\", \"color\":\"$CLOW\" },"
-    BL="{ \"full_text\": \"BL: $BACKLIGHT\", \"color\":\"$CLOW\" },"
-    CT="{ \"full_text\": \"$CPUTEMP\", \"color\":\"$CHIG\" },"
-    MEM="{ \"full_text\": \"$UM\/$TM(MB)\", \"color\":\"$CLOW\" },"
-    KERNEL="{ \"full_text\": \"$KER\", \"color\":\"$CHIG\" },"
-    CDISK="{ \"full_text\": \"Dsk: $CONDISK\", \"color\":\"$CLOW\" },"
+    START='['
+
+    CPUS='{ "full_text": "C.S: '$CPUSPEED' MHz", "color": "'$COLOR1'" },'
+    CPUG='{ "full_text": "C.G: '$CPUGOV'", "color": "'$COLOR2'" },'
+    CT='{ "full_text": "C.T: '$CPUTEMP'", "color": "'$COLOR1'" },'
+    MEM='{ "full_text": "M: '$UM'/'$TM'(MB)", "color": "'$COLOR2'" },'
+    KERNEL='{ "full_text": "'$KER'", "color": "'$COLOR1'" },'
+    CDISK='{ "full_text": "Dsk: '$CONDISK'", "color": "'$COLOR2'" },'
+
+    FANS='{ "full_text": "'$FANSPEED' RPM", "color": "'$CLOW'" },'
+    BL='{ "full_text": "BL: '$BACKLIGHT'", "color": "'$CLOW'" },'
    
     if [ $SL == "on" ]
     then
-        SRL="{ \"full_text\": \"SL: $SL\", \"color\":\"$CSPC\" },"
+        SRL='{ "full_text": "SL: '$SL'", "color": "'$COLOR3'" },'
     else
-        SRL="{ \"full_text\": \"SL: $SL\", \"color\":\"$CHIG\" },"
+        SRL='{ "full_text": "SL: '$SL'", "color": "'$COLOR1'" },'
     fi
 
-
-    echo "${line/[/$CPUS $FANS $CT $MEM $SRL $BL}" || exit 1
+    echo "${line/[/ $START $CPUS $FANS $CT $MEM $SRL $BL}" || exit 1
 done

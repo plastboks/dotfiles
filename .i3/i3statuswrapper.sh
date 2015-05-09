@@ -17,7 +17,9 @@ do
     CPUGOV=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
     CPUSPEED=$(grep "cpu MHz" /proc/cpuinfo | awk '{sum+=$4} END {printf "%04d", sum/NR}')
     
-    CPUS='[{ "full_text": "C.S: '$CPUSPEED' MHz", "color": "'$COLOR1'" },'
+    START='['
+
+    CPUS='{ "full_text": "C.S: '$CPUSPEED' MHz", "color": "'$COLOR1'" },'
     CPUG='{ "full_text": "C.G: '$CPUGOV'", "color": "'$COLOR2'" },'
     CT='{ "full_text": "C.T: '$CPUTEMP'", "color": "'$COLOR1'" },'
     MEM='{ "full_text": "M: '$UM'/'$TM'(MB)", "color": "'$COLOR2'" },'
@@ -31,5 +33,5 @@ do
         SRL='{ "full_text": "SL: '$SL'", "color": "'$COLOR1'" },'
     fi
 
-    echo "${line/[/$CPUS $CPUG $CT $MEM $KERNEL $CDISK $SRL}" || exit 1
+    echo "${line/[/ $START $CPUS $CPUG $CT $MEM $KERNEL $CDISK $SRL}" || exit 1
 done
