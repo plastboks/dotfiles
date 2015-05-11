@@ -92,8 +92,8 @@ function screenshot {
       echo "Please enter filename"
     else
       import -window root $1
+      sxiv $1
     fi
-
 }
 
 
