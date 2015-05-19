@@ -133,6 +133,19 @@ bindsym $mod+minus scratchpad show
 # # Show the sup-mail scratchpad window, if any.
 bindsym mod4+s [title="^Sup ::"] scratchpad show
 
+# i3bar
+# Toggle between hide state and show state
+bindsym $mod+m bar hidden_state toggle
+#
+# # Toggle between dock mode and hide mode
+bindsym $mod+n bar mode toggle
+#
+# # Set the bar instance with id 'bar-1' to switch to hide mode
+bindsym $mod+b bar mode hide bar-1
+#
+# # Set the bar instance with id 'bar-1' to always stay hidden
+bindsym $mod+Shift+b bar mode invisible bar-1#
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
