@@ -182,7 +182,6 @@ client.urgent           #2f343a #900000 #ffffff #900000
 
 # float force some applications
 for_window [class="MPlayer"] floating enable
-for_window [class="arkanoid"] floating enable
 
 # backlight for laptop
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
