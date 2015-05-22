@@ -111,7 +111,7 @@ function tailfc {
 
 
 # clean pesky webcache
-    function cleanwebcache {
+function cleanwebcache {
     if [ -d "$HOME/.mozilla/firefox" ]; then
         echo "Deleting ~/.mozilla/firefox"
         rm -r $HOME/.mozilla/firefox
@@ -125,3 +125,8 @@ function tailfc {
         rm -r $HOME/.cache/webkitgtk/applications
     fi
 }
+
+function defrag {
+    sudo btrfs filesystem defragment -r -v /
+}
+
