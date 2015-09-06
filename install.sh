@@ -47,6 +47,7 @@ LIST=(
     config/luakit
     config/uzbl
     config/dwb
+    config/vimb
     config/fontconfig
     config/user-dirs.dirs
     config/redshift.conf
