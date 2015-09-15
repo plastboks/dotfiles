@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# vimb wrapper script for generating a disposable vimb session.
+#
+
+RAND=`cat /dev/random | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
+
+vimb -p $RAND --cmd "set status-font=monospace 8| \
+                     set cookie-accept=origin| \
+                     set status-ssl-font=monospace 8| \
+                     set status-sslinvalid-font=monospace 8| \
+                     set fontsize=12"
+
+
+# cleanup
+rm -r ~/.config/vimb/$RAND
