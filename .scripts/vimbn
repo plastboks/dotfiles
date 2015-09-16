@@ -3,7 +3,7 @@
 # vimb wrapper script for generating a disposable vimb session.
 #
 
-RAND=`cat /dev/random | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
+RAND=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
 
 vimb -p $RAND --cmd "set status-font=monospace 8| \
                      set cookie-accept=origin| \
