@@ -204,3 +204,9 @@ client.urgent           #2f343a #900000 #ffffff #900000
 
 # float force some applications
 for_window [class="MPlayer"] floating enable
+for_window [class=".*"] title_format "<span font_style='italic'>%title</span>"
+for_window [class="jetbrains-studio"] title_format "<span foreground='#40E0D0'>%title</span>"
+for_window [class="Firefox"] title_format "<span foreground='#FFA500'>%title</span>"
+for_window [class="Evince"] title_format "<span foreground='#FF7373'>%title</span>"
+for_window [class="Vimb"] title_format "<span foreground='#FFFF66'>%title</span>"
+for_window [class="Vimbin"] title_format "<span foreground='#ff00ff'>vimbin | %title</span>"
