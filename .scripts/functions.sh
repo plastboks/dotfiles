@@ -124,6 +124,10 @@ function cleanwebcache {
         echo "Deleting ~/.cache/webkitgtk/applications"
         rm -r $HOME/.cache/webkitgtk/applications
     fi
+    if [ -d "$HOME/.local/share/webkit" ]; then
+        echo "Deleting ~/.local/share/webkit"
+        rm -r $HOME/.local/share/webkit
+    fi
 }
 
 function defrag {
