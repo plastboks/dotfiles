@@ -11,6 +11,5 @@ RAND=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
                      set status-sslinvalid-font=monospace 8| \
                      set fontsize=12"
 
-
 # cleanup
 rm -r ~/.config/vimbn/$RAND

@@ -211,6 +211,7 @@ for_window [class="Firefox"] title_format "<span foreground='#FFA500'>%title</sp
 for_window [class="Evince"] title_format "<span foreground='#FF7373'>%title</span>"
 for_window [class="Vimb"] title_format "<span foreground='#FFFF66'>%title</span>"
 for_window [class="Vimbn"] title_format "<span foreground='#ff00ff'>vimbin | %title</span>"
+for_window [class="Vimbin"] title_format "<span foreground='#ff00ff'>vimbin | %title</span>"
 
 # backlight for laptop
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
