@@ -75,12 +75,16 @@ function showList() {
 }
 
 function symlink() {
+    remove
+    printf "=> Symlinking $HOME/.$1\n"
+    ln -s $DOTPATH/.$1 $HOME/.$1
+}
+
+function remove() {
     if [ -d "$HOME/.$1" -o -f "$HOME/.$1" ]; then
         printf "=> $HOME/.$1 exists. Deleting it\n"
         rm -r $HOME/.$1
     fi
-    printf "=> Symlinking $HOME/.$1\n"
-    ln -s $DOTPATH/.$1 $HOME/.$1
 }
 
 function symlinkAll() {
@@ -90,10 +94,27 @@ function symlinkAll() {
     done
 }
 
+function removeAll() {
+    printf "=> Deleting everthing:\n"
+    for elem in "${LIST[@]}"; do
+        remove $elem
+    done
+}
+
 function findAndInstall() {
     for elem in "${LIST[@]}"; do
         if [ $1 = $elem ]; then
             symlink $elem
+            exit
+        fi
+    done
+    printf "=> Unknown dotfile - $1\n"
+}
+
+function findAndRemove() {
+    for elem in "${LIST[@]}"; do
+        if [ $1 = $elem ]; then
+            remove $elem
             exit
         fi
     done
@@ -110,6 +131,8 @@ Deploy script for my dotfiles - v:$VERSION
     --cdir                  Create directories
     --list                  List all available config files/dirs
     --install=<name>        Symlink only spesific file/dir
+    --uninstall
+    --remove=<name>
     --version               Show version.
     --help                  Show this...
 
@@ -126,6 +149,10 @@ while test $# -gt 0; do
             symlinkAll
             exit
             ;;
+        --uninstall)
+            removeAll
+            exit
+            ;;
         --cdir)
             createDirs
             exit
@@ -136,6 +163,10 @@ while test $# -gt 0; do
             ;;
         --install=*)
             findAndInstall $(echo $OPT | sed 's/--install=//')
+            exit
+            ;;
+        --remove=*)
+            findAndRemove $(echo $OPT | sed 's/--install=//')
             exit
             ;;
         --version)
