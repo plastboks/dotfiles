@@ -75,7 +75,7 @@ function showList() {
 }
 
 function symlink() {
-    remove
+    remove $1
     printf "=> Symlinking $HOME/.$1\n"
     ln -s $DOTPATH/.$1 $HOME/.$1
 }
