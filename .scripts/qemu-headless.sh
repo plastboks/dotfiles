@@ -18,6 +18,7 @@ fi
     -redir tcp:2222::22 \
     -redir tcp:9090::9090 \
     -redir tcp:9091::9091 \
+    -vnc :1 \
     -localtime &
 
 #-curses \

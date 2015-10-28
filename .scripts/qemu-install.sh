@@ -12,8 +12,9 @@ fi
     -cdrom  $1 \
     -hda $2 \
     -enable-kvm \
-    -machine pc-i440fx-2.3 \
     -net nic,vlan=0 \
     -net user,vlan=0 \
-    -vnc :1 \
     -localtime &
+
+
+#-machine pc-i440fx-2.3 \
