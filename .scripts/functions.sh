@@ -134,3 +134,11 @@ function defrag {
     sudo btrfs filesystem defragment -r -v /
 }
 
+function randomstring {
+    if [ -z "$1" ] || [[ $1 != [0-9]* ]]
+    then
+        echo "Please enter char length (integer)"
+    else
+        cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w $1 | head -n 1
+    fi
+}
