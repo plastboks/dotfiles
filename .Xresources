@@ -31,7 +31,7 @@ URxvt*fading:0
 URxvt*perl-lib        : /usr/lib/urxvt/perl/
 URxvt*perl-ext-common : default,matcher,urxvt-colors
 URxvt*url-launcher    : /usr/bin/xdg-open
-URxvt*keysym.F12      : perl:urxvt-colors:
+! URxvt*keysym.F12      : perl:urxvt-colors:
 URxvt*colorUL         : #4682B4
 URxvt*matcher.button  : 1
 URxvt*tabbed.tabbar-fg: 5
