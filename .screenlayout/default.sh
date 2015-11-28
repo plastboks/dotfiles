@@ -2,7 +2,7 @@
 
 # -- DarkGray -- #
 if [[ `hostname -s` = darkgray ]]; then
-    /usr/bin/xrandr/xrandr \
+    /usr/bin/xrandr \
         --output VIRTUAL1 \
         --off --output DP3 \
         --off --output DP2 \
