@@ -23,7 +23,7 @@ redshift &
 pulseaudio --start &
 
 # start xcompmgr
-#xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
+xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
 
 # straight out of compton
 #compton --config ~/.compton.conf
