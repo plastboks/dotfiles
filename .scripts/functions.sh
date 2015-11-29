@@ -285,3 +285,24 @@ function mp32ogg {
                                          -o "$file.ogg" -
     printf "\n"
 }
+
+
+# image distort
+function distort {
+
+    if [ -z "$2" ]; then
+        echo "Usage: $0 <imagefile> <percent>"
+        return
+    fi
+
+    file=$1
+    percent=$2
+    let "upscale = 10000/$percent"
+
+    echo $file
+    echo $percent
+    echo $upscale
+
+    convert $file -scale "$percent%" -scale "$upscale%" $file
+
+}
