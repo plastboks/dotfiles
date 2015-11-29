@@ -1,11 +1,8 @@
 # bell settings
-/bin/sh ~/.scripts/bell.sh &
+belloff
 
 # keyboard settings
-/bin/sh ~/.scripts/keyboard.sh &
-
-# trackball settings
-#/bin/sh ~/.scripts/trackball.sh & 
+keyboard
 
 # monitors setup
 /bin/sh ~/.screenlayout/default.sh &

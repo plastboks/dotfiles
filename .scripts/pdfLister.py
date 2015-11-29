@@ -16,8 +16,6 @@ def usage(argv):
 
 def removeUrlParts(url):
     url = url.split('/')
-    url.pop(0)
-    url.pop(0)
     url.pop(-1)
     return url
 

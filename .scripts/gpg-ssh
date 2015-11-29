@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# gpg agent
-killall -9 gpg-agent
-gpg-agent --daemon --enable-ssh-support --use-standard-socket 2>/dev/null
