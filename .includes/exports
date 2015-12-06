@@ -3,7 +3,7 @@
 #
 
 export EDITOR=vim
-export BROWSER=dwb
+export BROWSER=vimbn
 export TRANSPARENCY=95
 
 export VDPAU_DRIVER=va_gl
@@ -16,8 +16,5 @@ export PATH=${PATH}:~/android/android-sdk-linux/tools
 export PATH=${PATH}:~/android/android-sdk-linux/platform-tools
 export JAVA_HOME='/usr/lib/jvm/java-default-runtime'
 export _JAVA_AWT_WM_NONREPARENTING=1
-#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on' #fix for intellji
-
-export PATH="$HOME/.dynamic-colors/bin:$PATH"
 
 export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh;
