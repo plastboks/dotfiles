@@ -3,13 +3,12 @@
 # vimb wrapper script for generating a disposable vimb session.
 #
 
+VIMBN=~/develop/priv/vimb/src/vimbn
+SCRIPTPATH=`dirname $(readlink -f $0)`
+
 RAND=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
 
-~/develop/priv/vimb/src/vimbn -p $RAND --cmd "set status-font=monospace 8| \
-                     set cookie-accept=origin| \
-                     set status-ssl-font=monospace 8| \
-                     set status-sslinvalid-font=monospace 8| \
-                     set fontsize=12"
+$VIMBN -p $RAND -c $SCRIPTPATH/vimbn.config
 
 # cleanup
 rm -r ~/.config/vimbn/$RAND
