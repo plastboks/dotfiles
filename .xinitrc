@@ -16,6 +16,11 @@ dunst &
 # start redshift
 redshift &
 
+# backlight
+if [[ -f ~/.backlight ]]; then
+    xbacklight -set $(cat ~/.backlight)
+if
+
 # start pulseaudio
 pulseaudio --start &
 

@@ -215,8 +215,8 @@ for_window [class="Vimbn"] title_format "<span foreground='#ff00ff'>vimbin | %ti
 for_window [class="Vimbin"] title_format "<span foreground='#ff00ff'>vimbin | %title</span>"
 
 # backlight for laptop
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec xbacklight_save.sh -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight_save.sh -dec 5
 
 # volume keys for laptop
 bindsym XF86AudioRaiseVolume exec ponymix increase 5
