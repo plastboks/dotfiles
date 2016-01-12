@@ -19,7 +19,7 @@ redshift &
 # backlight
 if [[ -f ~/.backlight ]]; then
     xbacklight -set $(cat ~/.backlight)
-if
+fi
 
 # start pulseaudio
 pulseaudio --start &
