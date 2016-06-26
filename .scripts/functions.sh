@@ -214,7 +214,7 @@ function term_colors {
 # gpg ssh agent
 function gpg-ssh {
     killall -9 gpg-agent
-    gpg-agent --daemon --enable-ssh-support --use-standard-socket 2>/dev/null
+    gpg-agent --daemon --enable-ssh-support 2>/dev/null
 }
 
 

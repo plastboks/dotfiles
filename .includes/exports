@@ -17,4 +17,5 @@ export PATH=${PATH}:~/android/android-sdk-linux/platform-tools
 export JAVA_HOME='/usr/lib/jvm/java-default-runtime'
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh;
+#export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh;
+export SSH_AUTH_SOCK=/run/user/$(id -u $USER)/gnupg/S.gpg-agent.ssh
