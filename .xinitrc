@@ -18,6 +18,7 @@ redshift &
 
 # start pulseaudio
 pulseaudio --start &
+pulseaudio-dlna --codec wav --encoder-backend=ffmpeg --port 8081 &
 
 # start xcompmgr
 #xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
@@ -30,6 +31,13 @@ urxvtd -q -f -o &
 
 # xrdb
 xrdb ~/.Xresources &
+
+# dropbox
+dropbox &
+
+# social
+slack &
+telegram-desktop &
 
 # autocutsel
 autocutsel -fork &
