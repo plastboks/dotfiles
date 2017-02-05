@@ -3,18 +3,21 @@
 #
 
 export EDITOR=vim
-export BROWSER=vimbn
+export BROWSER=firefox
 export TRANSPARENCY=95
 
 export VDPAU_DRIVER=va_gl
+export SONAR_SCANNER_HOME="/opt/sonar-scanner"
 
 export PATH=${PATH}:~/bin
 export PATH=${PATH}:~/.bin
 export PATH=${PATH}:~/.scripts
+export PATH=${PATH}:~/.npm-global/bin
+export PATH=${PATH}:${SONAR_SCANNER_HOME}/bin
 
 export PATH=${PATH}:~/android/android-sdk-linux/tools
 export PATH=${PATH}:~/android/android-sdk-linux/platform-tools
-export JAVA_HOME=~/java/default
+export JAVA_HOME='/usr/lib/jvm/default'
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 #export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh;

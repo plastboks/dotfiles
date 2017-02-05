@@ -10,6 +10,7 @@ extensions.load("userscripts", {
 //>userscripts___CONFIG
 });
 //>userscripts___SCRIPT
+
 //<autoquvi___SCRIPT
 extensions.load("autoquvi", {
 //<autoquvi___CONFIG
@@ -67,6 +68,7 @@ filterListDir : data.configDir + "/adblock_lists"
 //>adblock_subscriptions___CONFIG
 });
 //>adblock_subscriptions___SCRIPT
+
 //<requestpolicy___SCRIPT
 /*<requestpolicy___DISABLED
 extensions.load("requestpolicy", {
