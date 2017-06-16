@@ -14,7 +14,7 @@ xautolock -time 5 -locker 'sh ${HOME}/.scripts/lock.sh' &
 dunst &
 
 # start redshift
-redshift &
+#redshift &
 
 # backlight
 if [[ -f ~/.backlight ]]; then
@@ -42,7 +42,10 @@ dropbox &
 
 # social
 slack &
-telegram-desktop &
+
+# wireless
+nm-applet &
+blueman-applet &
 
 # autocutsel
 autocutsel -fork &
