@@ -13,7 +13,7 @@ do
     UM=$( free -m | grep "Mem" | awk '{print $3}')
     KER=$(uname -r)
     CONDISK=$(grep -c "Vendor" /proc/scsi/scsi)
-    CPUTEMP=$(sensors | grep "Physical id" | awk '{print $4}')
+    CPUTEMP=$(sensors | grep "Package id" | awk '{print $4}')
     CPUGOV=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
     CPUSPEED=$(grep "cpu MHz" /proc/cpuinfo | awk '{sum+=$4} END {printf "%04d", sum/NR}')
     

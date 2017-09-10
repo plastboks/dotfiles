@@ -11,6 +11,10 @@
 
 set $mod Mod1
 
+set $ws8 "8:chat"
+set $ws9 "9:mail"
+set $ws10 "10:music"
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -102,9 +106,9 @@ bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -114,9 +118,9 @@ bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+8 move container to $ws8
+bindsym $mod+Shift+9 move container to $ws9
+bindsym $mod+Shift+0 move container to $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -194,7 +198,7 @@ bindsym $mod+ctrl+l exec xautolock -locknow
 # Custom part of my config file
 
 # start windows without borders by default
-new_window 1pixel
+new_window pixel 1
 
 # background colod
 client.background #1C1C1C
@@ -207,11 +211,17 @@ client.urgent           #2f343a #900000 #ffffff #900000
 # float force some applications
 for_window [class="MPlayer"] floating enable
 for_window [class=".*"] title_format "<span font_style='italic'>%title</span>"
-for_window [class="jetbrains"] title_format "<span foreground='#48E808'>%title</span>"
+for_window [class="jetbrains-idea"] title_format "<span foreground='#48E808'>%title</span>"
+for_window [class="jetbrains-webstorm"] title_format "<span foreground='#FFf858'>%title</span>"
 for_window [class="jetbrains-studio"] title_format "<span foreground='#40E0D0'>%title</span>"
 for_window [class="Chromium"] title_format "<span foreground='#A980D9'>%title</span>"
 for_window [class="Firefox"] title_format "<span foreground='#FFA500'>%title</span>"
+for_window [class="Thunderbird"] move container to workspace $ws9
+for_window [class="Waterfox"] title_format "<span foreground='#2bcdf2'>%title</span>"
 for_window [class="Evince"] title_format "<span foreground='#FF7373'>%title</span>"
+for_window [class="Slack"] title_format "<span foreground='#ff00a2'>%title</span>" move container to workspace $ws8
+for_window [class="TelegramDesktop"] move container to workspace $ws8
+for_window [class="Spotify"] move container to workspace $ws10
 for_window [class="Vimb"] title_format "<span foreground='#FFFF66'>%title</span>"
 for_window [class="Vimbn"] title_format "<span foreground='#ff00ff'>vimbin | %title</span>"
 for_window [class="Vimbin"] title_format "<span foreground='#ff00ff'>vimbin | %title</span>"
@@ -224,3 +234,18 @@ bindsym XF86MonBrightnessDown exec xbacklight_save.sh -dec 5
 bindsym XF86AudioRaiseVolume exec ponymix increase 5
 bindsym XF86AudioLowerVolume exec ponymix decrease 5
 bindsym XF86AudioMute exec ponymix toggle
+bindsym Print exec flameshot gui
+
+exec --no-startup-id feh --bg-scale ~/.wallpaper.png
+exec --no-startup-id urxvtd -q -f -o
+exec --no-startup-id pulseaudio --start
+exec --no-startup-id autocutsel -fork
+exec --no-startup-id autocutsel -selection PRIMARY -fork
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+exec --no-startup-id xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55
+#exec --no-startup-id redshift
+exec --no-startup-id dunst
+exec --no-startup-id dropbox
+exec --no-startup-id slack
+exec --no-startup-id thunderbird

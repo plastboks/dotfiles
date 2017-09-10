@@ -2,6 +2,7 @@
 #
 #
 
+export LC_ALL=en_US.UTF-8
 export EDITOR=vim
 export BROWSER=firefox
 export TRANSPARENCY=95

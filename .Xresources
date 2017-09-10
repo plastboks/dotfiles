@@ -2,7 +2,9 @@
 !# -- Fonts -- #
 !###############
 ! run "fc-list" for a list of available fonts
-*font: xft:LiberationMono for powerline:pixelsize=12
+*font: xft:LiberationMono for powerline:pixelsize=14
+!*font: xft:Liberation Mono:pixelsize=12
+!URxvt*font: xft:Inconsolata:size=8
 *intensityStyles: false
 *letterSpace: -1
 
@@ -82,3 +84,8 @@ URxvt*color14: #93a1a1
 !! white dark/light
 URxvt*color7: #eee8d5
 URxvt*color15: #fdf6e3
+
+! :Bind C-0, C-+ and C-= to activate small, medium, and big font size resp.
+!URxvt.keysym.C-0: command:\033]710;-*-dina-medium-r-normal--13-*-*-*-*-*-*-*\007
+!URxvt.keysym.C-minus: command:\033]710;-*-dina-medium-r-normal--15-*-*-*-*-*-*-*\007
+!URxvt.keysym.C-equal: command:\033]710;-*-dina-medium-r-normal--16-*-*-*-*-*-*-*\007
