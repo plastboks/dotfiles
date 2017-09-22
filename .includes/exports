@@ -14,6 +14,7 @@ export PATH=${PATH}:~/bin
 export PATH=${PATH}:~/.bin
 export PATH=${PATH}:~/.scripts
 export PATH=${PATH}:~/.npm-global/bin
+export PATH=${PATH}:~/.dynamic-colors/bin
 export PATH=${PATH}:${SONAR_SCANNER_HOME}/bin
 
 export PATH=${PATH}:~/android/android-sdk-linux/tools
