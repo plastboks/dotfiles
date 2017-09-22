@@ -7,3 +7,6 @@
 [submodule "bitpocket"]
 	path = .bitpocket
 	url = https://github.com/sickill/bitpocket.git
+[submodule ".dynamic-colors"]
+	path = .dynamic-colors
+	url = https://github.com/sos4nt/dynamic-colors.git
