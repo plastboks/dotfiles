@@ -87,6 +87,10 @@ ln -s $DOTPATH/.Xkbmap $HOME
 rm -r $HOME/.Xresources
 ln -s $DOTPATH/.Xresources $HOME
 
+# Profile
+rm -r $HOME/.profile
+ln -s $DOTPATH/.profile $HOME
+
 # TMUX
 rm -r $HOME/.tmux.conf
 ln -s $DOTPATH/.tmux.conf $HOME
