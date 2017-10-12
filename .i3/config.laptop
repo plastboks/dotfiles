@@ -182,7 +182,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         #status_command ~/.i3/conky-i3bar
-#status_command i3status #| python2 ~/.i3/i3statuswrapper.py
+        #status_command i3status #| python2 ~/.i3/i3statuswrapper.py
         status_command /bin/sh ~/.i3/i3statuswrapper.laptop.sh
         colors {
             statusline #676767
@@ -200,7 +200,7 @@ bindsym $mod+ctrl+l exec xautolock -locknow
 # start windows without borders by default
 new_window pixel 1
 
-# background colod
+# background color
 client.background #1C1C1C
 # class                 border  backgr. text    indicator
 client.focused          #606060 #4e4e4e #ffffff #657b83
@@ -210,18 +210,23 @@ client.urgent           #2f343a #900000 #ffffff #900000
 
 # float force some applications
 for_window [class="MPlayer"] floating enable
+for_window [class="Pinentry"] floating enable
+
+# applications with predefined workspace
+for_window [class="Thunderbird"] move container to workspace $ws9
+for_window [class="TelegramDesktop"] move container to workspace $ws8
+for_window [class="Spotify"] move container to workspace $ws10
+for_window [class="Slack"] move container to workspace $ws8
+
+# applications with different title_format
 for_window [class=".*"] title_format "<span font_style='italic'>%title</span>"
 for_window [class="jetbrains-idea"] title_format "<span foreground='#48E808'>%title</span>"
 for_window [class="jetbrains-webstorm"] title_format "<span foreground='#FFf858'>%title</span>"
 for_window [class="jetbrains-studio"] title_format "<span foreground='#40E0D0'>%title</span>"
 for_window [class="Chromium"] title_format "<span foreground='#A980D9'>%title</span>"
 for_window [class="Firefox"] title_format "<span foreground='#FFA500'>%title</span>"
-for_window [class="Thunderbird"] move container to workspace $ws9
 for_window [class="Waterfox"] title_format "<span foreground='#2bcdf2'>%title</span>"
 for_window [class="Evince"] title_format "<span foreground='#FF7373'>%title</span>"
-for_window [class="Slack"] title_format "<span foreground='#ff00a2'>%title</span>" move container to workspace $ws8
-for_window [class="TelegramDesktop"] move container to workspace $ws8
-for_window [class="Spotify"] move container to workspace $ws10
 for_window [class="Vimb"] title_format "<span foreground='#FFFF66'>%title</span>"
 for_window [class="Vimbn"] title_format "<span foreground='#ff00ff'>vimbin | %title</span>"
 for_window [class="Vimbin"] title_format "<span foreground='#ff00ff'>vimbin | %title</span>"
