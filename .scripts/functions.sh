@@ -47,8 +47,10 @@ function wifidown {
 
 # network manager nmcli wrapper function
 function wificonnect {
-  # usage: wificonnect ssid password
-  /usr/bin/nmcli dev wifi con $1 password $2 name $1
+  printf "=> Enter password: "
+  read -s password
+  printf "\n=> Connecting with $1 ...\n"
+  /usr/bin/nmcli dev wifi con $1 password $password name $1
 }
 
 
