@@ -2,7 +2,8 @@
 !# -- Fonts -- #
 !###############
 ! run "fc-list" for a list of available fonts
-*font: xft:LiberationMono for powerline:pixelsize=14
+!*font: xft:LiberationMono for powerline:pixelsize=14
+*font: xft:Inconsolata for powerline:size=13
 !*font: xft:Liberation Mono:pixelsize=12
 !URxvt*font: xft:Inconsolata:size=8
 *intensityStyles: false
