@@ -212,6 +212,9 @@ client.urgent           #2f343a #900000 #ffffff #900000
 for_window [class="MPlayer"] floating enable
 for_window [class="Pinentry"] floating enable
 
+# force window decoration for certain apps
+for_window [class="Pinentry"] border normal 1
+
 # applications with predefined workspace
 for_window [class="Thunderbird"] move container to workspace $ws9
 for_window [class="TelegramDesktop"] move container to workspace $ws8
