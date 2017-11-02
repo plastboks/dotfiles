@@ -50,7 +50,7 @@ function wificonnect {
   printf "=> Enter password: "
   read -s password
   printf "\n=> Connecting with $1 ...\n"
-  /usr/bin/nmcli dev wifi con $1 password $password name $1
+  /usr/bin/nmcli dev wifi con "$1" password $password name "$1"
 }
 
 
