@@ -19,7 +19,7 @@ do
     UM=$( free -m | grep "Mem" | awk '{print $3}')
     #KER=$(uname -r)
     #CONDISK=$(grep -c "Vendor" /proc/scsi/scsi)
-    CPUTEMP=$(sensors coretemp-isa-0000 | grep "Physical id" | awk '{print $4}')
+    CPUTEMP=$(sensors coretemp-isa-0000 | grep "Package id" | awk '{print $4}')
     FANSPEED=$(sensors thinkpad-isa-0000 | grep "fan1" | awk '{print $2}')
     CPUGOV=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
     CPUSPEED=$(grep "cpu MHz" /proc/cpuinfo | awk '{sum+=$4} END {printf "%04d", sum/NR}')

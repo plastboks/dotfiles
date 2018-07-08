@@ -44,7 +44,9 @@ belloff
 /usr/bin/setxkbmap -option ctrl:nocaps
 
 # screensaver
-xautolock -time 5 -locker 'sh ${HOME}/.scripts/lock.sh' & 
+#xautolock -time 5 -locker 'sh ${HOME}/.scripts/lock.sh' &
+xautolock -time 5 -locker slock &
+
 
 # backlight
 if [[ -f ~/.backlight ]]; then
