@@ -224,7 +224,8 @@ for_window [class="Slack"] move container to workspace $ws8
 # applications with different title_format
 for_window [class=".*"] title_format "<span font_style='italic'>%title</span>"
 for_window [class="jetbrains-idea"] title_format "<span foreground='#48E808'>%title</span>"
-for_window [class="jetbrains-webstorm"] title_format "<span foreground='#FFf858'>%title</span>"
+for_window [class="jetbrains-clion"] title_format "<span foreground='#FFf858'>%title</span>"
+for_window [class="jetbrains-pycharm"] title_format "<span foreground='#FFf858'>%title</span>"
 for_window [class="jetbrains-studio"] title_format "<span foreground='#40E0D0'>%title</span>"
 for_window [class="Chromium"] title_format "<span foreground='#A980D9'>%title</span>"
 for_window [class="Firefox"] title_format "<span foreground='#FFA500'>%title</span>"
